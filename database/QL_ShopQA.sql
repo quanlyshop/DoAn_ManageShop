@@ -7,7 +7,7 @@ GO
 ---Tạo bảng nhân viên
 CREATE TABLE NhanVien
 (
-	MaNV INT NOT NULL PRIMARY KEY,
+	MaNV INT identity NOT NULL PRIMARY KEY,
 	TenNhanVien NVARCHAR(100) not null,
 	GioiTinh NVARCHAR(5),
 	DiaChi NVARCHAR(100),
@@ -15,6 +15,9 @@ CREATE TABLE NhanVien
 	NamSinh date not null,
 )
 GO
+
+Alter table NhanVien add chucvu nvarchar(50)
+Go
 
 ---Tạo bảng khách hàng
 CREATE TABLE KhachHang
@@ -33,7 +36,7 @@ GO
 --Tạo bảng hàng hóa
 Create table HangHoa
 (
-	MaHang char(10) not null primary key,
+	MaHang int identity not null primary key,
 	TenHang nvarchar(50) not null,
 	SoLuong int not null,
 	DonGiaGoc int not null,
@@ -48,30 +51,30 @@ Alter table HangHoa add NgayNhap date
 Go
 
 --Tạo bảng hóa đơn
-Create table HoaDon
-(
-	MaHD char(10) not null primary key,
-	MaNV int not null REFERENCES NhanVien(MaNV),
-	MaHang char(10) not null REFERENCES HangHoa(MaHang),
-	MaKH int REFERENCES KhachHang(MaKH),
-	NgayBan datetime not null,
-	TongTien int not null
-)
-Go
+--Create table HoaDon
+--(
+--	MaHD int identity not null primary key,
+--	MaNV int not null REFERENCES NhanVien(MaNV),
+--	MaHang char(10) not null REFERENCES HangHoa(MaHang),
+--	MaKH int REFERENCES KhachHang(MaKH),
+--	NgayBan datetime not null,
+--	TongTien int not null
+--)
+--Go
 
---Tạo bảng chi tiết hóa đơn
-Create table ChiTietHD
-(
-	MaHD char(10) not null REFERENCES HoaDon(MaHD),
-	MaHang char(10) not null REFERENCES HangHoa(MaHang),
-	SoLuong int not null,
-)
-Go
+----Tạo bảng chi tiết hóa đơn
+--Create table ChiTietHD
+--(
+--	MaHD int identity not null REFERENCES HoaDon(MaHD),
+--	MaHang char(10) not null REFERENCES HangHoa(MaHang),
+--	SoLuong int not null,
+--)
+--Go
 
 --Tạo bảng tài khoản
 create table Account
 (
-	id int not null primary key,
+	id int identity not null primary key,
 	fullname nvarchar(100),
 	usename varchar(50),
 	pass varchar(50),
@@ -89,9 +92,9 @@ Alter table Account add constraint FK_Account foreign key(MaNV) references NhanV
 Go
 
 --Thêm tài khoản
-insert into Account values(1,N'Trần Văn Dương','admin','admin')
-insert into Account values(3,N'Đặng Văn Phúc','phuc','phuc')
-insert into Account values(4,N'Nguyễn Trọng Hiệp','hip','hip')
+insert into Account values(N'Trần Văn Dương','admin','admin',N'Nhân viên',1)
+insert into Account values(N'Đặng Văn Phúc','phuc','phuc',N'Nhân viên',2)
+insert into Account values(N'Nguyễn Trọng Hiệp','hip','hip',N'Nhân viên',3)
 go
 
 --Truy vấn tài khoản
@@ -107,12 +110,12 @@ go
 select *from KhachHang
 go
 ---Nhập dữ liệu cho bảng nhân viên
-insert into NhanVien values(123,N'Trần Văn Dương',N'Nam',N'Trừ Văn Thố, Bàu Bàng, Bình Dương',0396752611,'07-11-1999')
-insert into NhanVien values(1234,N'Nguyễn Trọng Hiệp',N'Nam',N'Bến Cát, Bình Dương',0123456789,'07-11-2000')
-insert into NhanVien values(12345,N'Đăng Văn Phúc',N'Nam',N'Lai Uyên, Bàu Bàng, Bình Dương',02123345,'07-11-1999')
+insert into NhanVien values(N'Trần Văn Dương',N'Nam',N'Trừ Văn Thố, Bàu Bàng, Bình Dương',0396752611,'07-11-1999')
+insert into NhanVien values(N'Nguyễn Trọng Hiệp',N'Nam',N'Bến Cát, Bình Dương',0123456789,'07-11-2000')
+insert into NhanVien values(N'Đăng Văn Phúc',N'Nam',N'Lai Uyên, Bàu Bàng, Bình Dương',02123345,'07-11-1999')
 go
 select *from NhanVien
 
 ---Nhập dữ liệu cho bảng hàng hóa
-insert into HangHoa values('HH01',N'Tee-Shirt',10,100000,150000,N'Streetgang','06-23-2020')
+--insert into HangHoa values('HH01',N'Tee-Shirt',10,100000,150000,N'Streetgang','06-23-2020')
 

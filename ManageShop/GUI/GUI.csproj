@@ -84,6 +84,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterGUI.Designer.cs">
+      <DependentUpon>RegisterGUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HangHoaGUI.resx">
       <DependentUpon>HangHoaGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +116,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegisterGUI.resx">
+      <DependentUpon>RegisterGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,6 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Key-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{4d7c2277-aa9e-4b96-a443-a9f50d335e50}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

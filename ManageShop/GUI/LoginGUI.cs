@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
 
 namespace GUI
 {
@@ -38,6 +39,28 @@ namespace GUI
         {
             txtUsename.Text = "";
             txtPass.Text = "";
+        }
+        bool Login(string usename, string pass)
+        {
+            return AccountDAO.Instance.Login(usename, pass);
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string usename = txtUsename.Text;
+            string pass = txtPass.Text;
+            if(Login(usename, pass))
+            {
+                HomeGUI f = new HomeGUI();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mặt khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsename.Text = "";
+                txtPass.Text = "";
+            }
         }
     }
 }

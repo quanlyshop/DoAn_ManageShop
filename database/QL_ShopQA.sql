@@ -95,6 +95,7 @@ Go
 insert into Account values(N'Trần Văn Dương','admin','admin',N'Nhân viên',1)
 insert into Account values(N'Đặng Văn Phúc','phuc','phuc',N'Nhân viên',2)
 insert into Account values(N'Nguyễn Trọng Hiệp','hip','hip',N'Nhân viên',3)
+insert into Account values(N'Phan Văn Tuân','tuan','tuan',N'Bảo vệ',4)
 go
 
 --Truy vấn tài khoản
@@ -113,9 +114,15 @@ go
 insert into NhanVien values(N'Trần Văn Dương',N'Nam',N'Trừ Văn Thố, Bàu Bàng, Bình Dương',0396752611,'07-11-1999')
 insert into NhanVien values(N'Nguyễn Trọng Hiệp',N'Nam',N'Bến Cát, Bình Dương',0123456789,'07-11-2000')
 insert into NhanVien values(N'Đăng Văn Phúc',N'Nam',N'Lai Uyên, Bàu Bàng, Bình Dương',02123345,'07-11-1999')
+
 go
 select *from NhanVien
 
 ---Nhập dữ liệu cho bảng hàng hóa
 --insert into HangHoa values('HH01',N'Tee-Shirt',10,100000,150000,N'Streetgang','06-23-2020')
 
+select n.TenNhanVien,a.id,a.usename,a.pass,a.chucvu
+from Account a,NhanVien n
+where a.chucvu=n.chucvu
+
+select *from Account a where a.usename='admin' and a.pass='admin'

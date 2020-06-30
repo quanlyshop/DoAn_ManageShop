@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_icon {
+            get {
+                object obj = ResourceManager.GetObject("Add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Administrator_icon {
             get {
                 object obj = ResourceManager.GetObject("Administrator-icon", resourceCulture);
@@ -103,6 +113,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_icon {
+            get {
+                object obj = ResourceManager.GetObject("Close-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Files_Delete_File_icon {
+            get {
+                object obj = ResourceManager.GetObject("Files-Delete-File-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fix_icon {
             get {
                 object obj = ResourceManager.GetObject("Fix-icon", resourceCulture);
@@ -116,6 +146,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap Key_icon {
             get {
                 object obj = ResourceManager.GetObject("Key-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pencil_icon {
+            get {
+                object obj = ResourceManager.GetObject("Pencil-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

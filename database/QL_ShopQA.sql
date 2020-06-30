@@ -97,7 +97,8 @@ insert into Account values(N'Đặng Văn Phúc','phuc','phuc',N'Nhân viên',2)
 insert into Account values(N'Nguyễn Trọng Hiệp','hip','hip',N'Nhân viên',3)
 insert into Account values(N'Phan Văn Tuân','tuan','tuan',N'Bảo vệ',4)
 go
-
+--Sửa tài khoản
+update Account set fullname=N'Duong',usename=N'admin',pass=N'admin',chucvu=N'Nhân viên',MaNV='1' where id=4
 --Truy vấn tài khoản
 select *
 from Account 

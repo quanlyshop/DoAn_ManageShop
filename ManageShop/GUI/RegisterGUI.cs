@@ -41,18 +41,17 @@ namespace GUI
             txtfullname.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "fullname"));
             txtusename.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "usename"));
             txtpass.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "pass"));
-            txtMaNV.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "MaNV"));
             cbchucvu.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "chucvu"));
         }
         private void RegisterGUI_Load(object sender, EventArgs e)
         {
 
         }
-        void AddAccount(string fullname, string usename, string pass, string chucvu, string MaNV)
+        void AddAccount(string fullname, string usename, string pass, string chucvu)
         {
             try
             {
-                if (AccountDAO.Instance.InsertAccount(fullname, usename, pass, chucvu, MaNV))
+                if (AccountDAO.Instance.InsertAccount(fullname, usename, pass, chucvu))
                 {
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
                 }
@@ -69,11 +68,11 @@ namespace GUI
                 MessageBox.Show("Mã nhân viên không tồn tại");
             }
         }
-        void EditAccount(string fullname, string usename, string pass, string chucvu, string MaNV, string id)
+        void EditAccount(string fullname, string usename, string pass, string chucvu, string id)
         {
             try
             {
-                if (AccountDAO.Instance.UpdateAccount(fullname, usename, pass, chucvu, MaNV, id))
+                if (AccountDAO.Instance.UpdateAccount(fullname, usename, pass, chucvu, id))
                 {
                     MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK);
                 }
@@ -112,9 +111,7 @@ namespace GUI
             string usename = txtusename.Text;
             string pass = txtpass.Text;
             string chucvu = cbchucvu.Text;
-            string MaNV = txtMaNV.Text;
-            string id = txtid.Text;
-            EditAccount(fullname, usename, pass, chucvu, MaNV, id);
+            AddAccount(fullname, usename, pass, chucvu);
         }
         
         private void btnXoa_Click(object sender, EventArgs e)
@@ -129,12 +126,25 @@ namespace GUI
             string usename = txtusename.Text;
             string pass = txtpass.Text;
             string chucvu = cbchucvu.Text;
-            string MaNV = txtMaNV.Text;
             string id = txtid.Text;
-            EditAccount(fullname, usename, pass, chucvu, MaNV, id);
+            EditAccount(fullname, usename, pass, chucvu, id);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            txtid.Text = "";
+            txtfullname.Text = "";
+            txtusename.Text = "";
+            txtpass.Text = "";
+            cbchucvu.Text = "";
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

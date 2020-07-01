@@ -133,6 +133,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Files_Delete_File_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Files-Delete-File-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fix_icon {
             get {
                 object obj = ResourceManager.GetObject("Fix-icon", resourceCulture);

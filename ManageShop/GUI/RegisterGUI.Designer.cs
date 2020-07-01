@@ -40,13 +40,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtfullname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -74,6 +73,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -95,8 +95,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtfullname);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtMaNV);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtid);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(7, 104);
@@ -105,6 +103,7 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin tài khoản";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // cbchucvu
             // 
@@ -115,7 +114,7 @@
             this.cbchucvu.Items.AddRange(new object[] {
             "Thu ngân",
             "Giữ xe"});
-            this.cbchucvu.Location = new System.Drawing.Point(884, 88);
+            this.cbchucvu.Location = new System.Drawing.Point(882, 31);
             this.cbchucvu.Name = "cbchucvu";
             this.cbchucvu.Size = new System.Drawing.Size(173, 33);
             this.cbchucvu.TabIndex = 17;
@@ -132,7 +131,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(743, 88);
+            this.label6.Location = new System.Drawing.Point(741, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 25);
             this.label6.TabIndex = 6;
@@ -169,7 +168,7 @@
             // txtfullname
             // 
             this.txtfullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfullname.Location = new System.Drawing.Point(884, 31);
+            this.txtfullname.Location = new System.Drawing.Point(552, 31);
             this.txtfullname.Name = "txtfullname";
             this.txtfullname.Size = new System.Drawing.Size(173, 30);
             this.txtfullname.TabIndex = 14;
@@ -178,29 +177,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(740, 31);
+            this.label3.Location = new System.Drawing.Point(408, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 25);
             this.label3.TabIndex = 9;
             this.label3.Text = "Tên nhân viên";
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(552, 31);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(173, 30);
-            this.txtMaNV.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(416, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 25);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Mã nhân viên";
             // 
             // txtid
             // 
@@ -260,6 +241,19 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::GUI.Properties.Resources.Files_Delete_File_icon;
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuy.Location = new System.Drawing.Point(452, 21);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(95, 52);
+            this.btnHuy.TabIndex = 1;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // RegisterGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -296,9 +290,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtfullname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

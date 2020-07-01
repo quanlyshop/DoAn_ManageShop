@@ -124,11 +124,11 @@
             // 
             // mtbSDT
             // 
-            this.mtbSDT.Location = new System.Drawing.Point(650, 90);
+            this.mtbSDT.Location = new System.Drawing.Point(654, 90);
             this.mtbSDT.Margin = new System.Windows.Forms.Padding(4);
             this.mtbSDT.Mask = "0000000000";
             this.mtbSDT.Name = "mtbSDT";
-            this.mtbSDT.Size = new System.Drawing.Size(196, 35);
+            this.mtbSDT.Size = new System.Drawing.Size(192, 35);
             this.mtbSDT.TabIndex = 5;
             this.mtbSDT.ValidatingType = typeof(int);
             // 
@@ -141,10 +141,10 @@
             "Nam",
             "Nữ",
             "Khác"});
-            this.cmbGioiTinh.Location = new System.Drawing.Point(650, 35);
+            this.cmbGioiTinh.Location = new System.Drawing.Point(654, 36);
             this.cmbGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
-            this.cmbGioiTinh.Size = new System.Drawing.Size(196, 35);
+            this.cmbGioiTinh.Size = new System.Drawing.Size(192, 35);
             this.cmbGioiTinh.TabIndex = 2;
             // 
             // label6

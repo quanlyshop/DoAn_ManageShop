@@ -19,7 +19,8 @@ GO
 Alter table NhanVien add chucvu nvarchar(50)
 Alter table NhanVien alter column LuongCoBan int
 Go
-
+--ALTER TABLE NhanVien
+--ALTER COLUMN LuongCoBan money
 ---Tạo bảng khách hàng
 CREATE TABLE KhachHang
 (
@@ -125,3 +126,14 @@ from Account a,NhanVien n
 where a.chucvu=n.chucvu
 
 select *from Account a where a.usename='admin' and a.pass='admin'
+
+---Thêm dữ liệu cho bảng hàng hóa
+Insert into HangHoa values(N'Streetgang',10,10000,10000,N'SG','07-07-2020')
+Insert into HangHoa values(N'Dergey',20,20000,10000,N'SG','08-07-2020')
+Insert into HangHoa values(N'Bad',9,10000,20000,N'SG','09-07-2020')
+Insert into HangHoa values(N'5TW',10,10000,10000,N'SG','07-07-2020')
+go
+create proc GetTableList
+as select MaHang, TenHang, DonGiaBan from HangHoa
+go
+exec GetTableList

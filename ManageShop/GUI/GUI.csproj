@@ -90,6 +90,12 @@
     <Compile Include="RegisterGUI.Designer.cs">
       <DependentUpon>RegisterGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="StoreGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreGUI.Designer.cs">
+      <DependentUpon>StoreGUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HangHoaGUI.resx">
       <DependentUpon>HangHoaGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterGUI.resx">
       <DependentUpon>RegisterGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreGUI.resx">
+      <DependentUpon>StoreGUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

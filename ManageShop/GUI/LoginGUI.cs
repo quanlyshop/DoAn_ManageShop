@@ -32,7 +32,10 @@ namespace GUI
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(MessageBox.Show("Bạn có thật sự muốn thoát chương trình","Thông báo",MessageBoxButtons.OKCancel)==System.Windows.Forms.DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

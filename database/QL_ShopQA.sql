@@ -19,9 +19,15 @@ GO
 Alter table NhanVien add chucvu nvarchar(50)
 Alter table NhanVien alter column LuongCoBan int
 Go
---ALTER TABLE NhanVien
---ALTER COLUMN LuongCoBan money
----Tạo bảng khách hàng
+
+ALTER TABLE NhanVien ADD CONSTRAINT CK_SDT CHECK 
+(LEN(SDT)=10)
+go
+
+ALTER TABLE NhanVien
+ADD CONSTRAINT _SDT UNIQUE (SDT);
+go
+
 CREATE TABLE KhachHang
 (
 	MaKH int identity not null primary key,
@@ -34,6 +40,13 @@ CREATE TABLE KhachHang
 	Email nvarchar(50)
 )
 GO
+--Rang buoc sdt co 10 so
+--ALTER TABLE KhachHang ADD CONSTRAINT CK_SDTKhachHang CHECK (LEN(SDT)=10)
+--go
+--ALTER TABLE KhachHang
+--ADD CONSTRAINT _SDTKH UNIQUE (SDT)
+--go
+
 
 --Tạo bảng hàng hóa
 Create table HangHoa
@@ -105,8 +118,9 @@ where usename='admin' and pass='admin'
 
 ---Thêm khách hàng
 INSERT INTO KhachHang values(N'Hùng',0123456789,'Nam',N'Bình Dương',10,'01-01-2000','hung@gmail.com')
-INSERT INTO KhachHang values(N'Đức',0123456789,'Nam',N'Bình Dương',5,'02-08-2000','duc@gmail.com')
+INSERT INTO KhachHang values(N'Đức Phúc',0396752611,'Nam',N'Bình Dương',5,'02-08-2000','duc@gmail.com')
 go
+
 
 select *from KhachHang
 go
@@ -114,6 +128,7 @@ go
 insert into NhanVien values(N'Dương đẹp troai',N'Nam',N'Bình Dương',0396752611,'01-01-2000',N'Thu ngân',100000)
 insert into NhanVien values(N'Trần Văn Dương',N'Nam',N'Bình Dương','0396752611','01-01-2000',N'Thu ngân','100000')
 go
+
 --update NhanVien
 update NhanVien set TenNhanVien=N'Đặng Văn Phúc',GioiTinh=N'Nam',DiaChi=N'Lai Uyên Bình Dương',SDT='0396752611',NamSinh='01-01-2000',chucvu=N'Giữ xe',LuongCoBan='10000' where MaNV='7'
 select *from NhanVien
@@ -133,7 +148,31 @@ Insert into HangHoa values(N'Dergey',20,20000,10000,N'SG','08-07-2020')
 Insert into HangHoa values(N'Bad',9,10000,20000,N'SG','09-07-2020')
 Insert into HangHoa values(N'5TW',10,10000,10000,N'SG','07-07-2020')
 go
+
 create proc GetTableList
 as select MaHang, TenHang, DonGiaBan from HangHoa
 go
 exec GetTableList
+go
+
+---search KhachHang
+create proc SearchKhachHang(@ten nvarchar(100))
+as select *from KhachHang where @ten like TenKH
+go
+
+exec SearchKhachHang N'Đức'
+select *from NhanVien
+select *from KhachHang
+select *from HoaDon
+select *from HangHoa
+---Them HoaDon
+insert into HoaDon values('2','9','07-06-2020',100000)
+insert into HoaDon values('3','10','09-06-2020',120000)
+insert into HoaDon values('8','11','08-06-2020',1230000) 
+
+---Them ChiTietHD
+insert into ChiTietHD values('3','1',10)
+insert into ChiTietHD values('4','2',4)
+insert into ChiTietHD values('5','3',2)
+
+select *from HoaDon where MaHD=3

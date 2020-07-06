@@ -42,15 +42,17 @@
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnXem = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDiem = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mtbSoDiem = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -67,7 +69,7 @@
             this.dgvKhachHang.Location = new System.Drawing.Point(3, 22);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowTemplate.Height = 28;
-            this.dgvKhachHang.Size = new System.Drawing.Size(1158, 193);
+            this.dgvKhachHang.Size = new System.Drawing.Size(1304, 193);
             this.dgvKhachHang.TabIndex = 0;
             // 
             // dtNamSinh
@@ -161,6 +163,7 @@
             // 
             // txtMaKH
             // 
+            this.txtMaKH.Enabled = false;
             this.txtMaKH.Location = new System.Drawing.Point(156, 40);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(63, 26);
@@ -177,31 +180,49 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnHuy);
-            this.groupBox3.Controls.Add(this.btnLuu);
+            this.groupBox3.Controls.Add(this.btnSearch);
+            this.groupBox3.Controls.Add(this.txtSearch);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.btnXem);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(21, 410);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1148, 107);
+            this.groupBox3.Size = new System.Drawing.Size(1308, 107);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức năng";
+            // 
+            // btnXem
+            // 
+            this.btnXem.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
+            this.btnXem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnXem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXem.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXem.Location = new System.Drawing.Point(540, 29);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(117, 57);
+            this.btnXem.TabIndex = 1;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvKhachHang);
             this.groupBox2.Location = new System.Drawing.Point(22, 186);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1164, 218);
+            this.groupBox2.Size = new System.Drawing.Size(1310, 218);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách khách hàng";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mtbSoDiem);
             this.groupBox1.Controls.Add(this.dtNamSinh);
             this.groupBox1.Controls.Add(this.mtbSDT);
             this.groupBox1.Controls.Add(this.cmbGioiTinh);
@@ -214,32 +235,22 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtTenKH);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtDiem);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtMaKH);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(22, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1164, 168);
+            this.groupBox1.Size = new System.Drawing.Size(1307, 168);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
             // 
-            // label5
+            // txtEmail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(377, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Điểm";
-            // 
-            // txtDiem
-            // 
-            this.txtDiem.Location = new System.Drawing.Point(440, 110);
-            this.txtDiem.Name = "txtDiem";
-            this.txtDiem.Size = new System.Drawing.Size(63, 26);
-            this.txtDiem.TabIndex = 1;
+            this.txtEmail.Location = new System.Drawing.Point(907, 110);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(215, 26);
+            this.txtEmail.TabIndex = 1;
             // 
             // label7
             // 
@@ -250,43 +261,55 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Email";
             // 
-            // txtEmail
+            // label5
             // 
-            this.txtEmail.Location = new System.Drawing.Point(907, 110);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(215, 26);
-            this.txtEmail.TabIndex = 1;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(377, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Điểm";
             // 
-            // btnHuy
+            // mtbSoDiem
             // 
-            this.btnHuy.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnHuy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(798, 25);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(117, 57);
-            this.btnHuy.TabIndex = 1;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.mtbSoDiem.Location = new System.Drawing.Point(437, 110);
+            this.mtbSoDiem.Mask = "000";
+            this.mtbSoDiem.Name = "mtbSoDiem";
+            this.mtbSoDiem.Size = new System.Drawing.Size(83, 26);
+            this.mtbSoDiem.TabIndex = 5;
+            this.mtbSoDiem.ValidatingType = typeof(int);
             // 
-            // btnLuu
+            // label8
             // 
-            this.btnLuu.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnLuu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::GUI.Properties.Resources.Save_icon;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(657, 25);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(117, 57);
-            this.btnLuu.TabIndex = 2;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(851, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(131, 22);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Tên khách hàng";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(988, 43);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(167, 30);
+            this.txtSearch.TabIndex = 7;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = global::GUI.Properties.Resources.Very_Basic_Search_icon;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(1176, 29);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(117, 57);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnXoa
             // 
@@ -297,13 +320,14 @@
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::GUI.Properties.Resources.Close_2_icon;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(514, 25);
+            this.btnXoa.Location = new System.Drawing.Point(396, 29);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(117, 57);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -314,13 +338,14 @@
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::GUI.Properties.Resources.Fix_icon;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(370, 25);
+            this.btnSua.Location = new System.Drawing.Point(252, 29);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(117, 57);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -332,19 +357,20 @@
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::GUI.Properties.Resources.Actions_list_add_user_icon;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(231, 25);
+            this.btnThem.Location = new System.Drawing.Point(113, 29);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(117, 57);
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // KhachHangGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 514);
+            this.ClientSize = new System.Drawing.Size(1362, 514);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -352,6 +378,7 @@
             this.Text = "KhachHangGUI";
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -379,12 +406,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDiem;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.MaskedTextBox mtbSoDiem;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label8;
     }
 }

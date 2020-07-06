@@ -30,14 +30,14 @@
         {
             this.flpTableStore = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lsvBill = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.lsvBill = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,6 +61,33 @@
             this.panel1.Size = new System.Drawing.Size(455, 67);
             this.panel1.TabIndex = 1;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(180, 10);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(117, 44);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Lưu";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(35, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(117, 44);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "In";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(324, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 44);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Thanh toán";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lsvBill);
@@ -68,6 +95,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(455, 425);
             this.panel2.TabIndex = 1;
+            // 
+            // lsvBill
+            // 
+            this.lsvBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvBill.GridLines = true;
+            this.lsvBill.HideSelection = false;
+            this.lsvBill.Location = new System.Drawing.Point(0, 0);
+            this.lsvBill.Name = "lsvBill";
+            this.lsvBill.Size = new System.Drawing.Size(455, 425);
+            this.lsvBill.TabIndex = 0;
+            this.lsvBill.UseCompatibleStateImageBehavior = false;
+            this.lsvBill.View = System.Windows.Forms.View.List;
             // 
             // button1
             // 
@@ -93,43 +132,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(283, 26);
             this.textBox1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(324, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 44);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Thanh toán";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(35, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 44);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "In";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(180, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 44);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Lưu";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // lsvBill
-            // 
-            this.lsvBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(0, 0);
-            this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(455, 425);
-            this.lsvBill.TabIndex = 0;
-            this.lsvBill.UseCompatibleStateImageBehavior = false;
             // 
             // StoreGUI
             // 

@@ -193,6 +193,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Very_Basic_Search_icon {
+            get {
+                object obj = ResourceManager.GetObject("Very-Basic-Search-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Windows_Turn_Off_icon {
             get {
                 object obj = ResourceManager.GetObject("Windows-Turn-Off-icon", resourceCulture);

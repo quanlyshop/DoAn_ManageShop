@@ -82,7 +82,7 @@
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(199, 371);
+            this.btnLogin.Location = new System.Drawing.Point(204, 371);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(117, 42);
             this.btnLogin.TabIndex = 3;

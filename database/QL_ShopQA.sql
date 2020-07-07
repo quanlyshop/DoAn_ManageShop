@@ -72,8 +72,10 @@ Create table HoaDon
 	TongTien int not null
 )
 Go
+--Thêm cột TenSanPham, SoLuong, DonGia vào bảng HoaDon
 Alter table HoaDon add TenSanPham nvarchar(100)
 alter table HoaDon add SoLuong int
+Alter table HoaDon add DonGia int
 Go
 
 --Tạo bảng tài khoản
@@ -146,3 +148,10 @@ as select *from KhachHang where @ten like TenKH
 go
 
 exec SearchKhachHang N'Đức'
+select *from HoaDon
+select *from SanPham
+select *from NhanVien
+select *from KhachHang
+
+---Thêm dữ liệu bảng hóa đơn
+insert into HoaDon values('3','9','8-7-2020','50000',N'Hoodie','1','50000')

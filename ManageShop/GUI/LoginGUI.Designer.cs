@@ -36,6 +36,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lbFullname = new System.Windows.Forms.Label();
+            this.lbChucvu = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -133,6 +135,24 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+            // lbFullname
+            // 
+            this.lbFullname.AutoSize = true;
+            this.lbFullname.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFullname.Location = new System.Drawing.Point(37, 48);
+            this.lbFullname.Name = "lbFullname";
+            this.lbFullname.Size = new System.Drawing.Size(0, 22);
+            this.lbFullname.TabIndex = 13;
+            // 
+            // lbChucvu
+            // 
+            this.lbChucvu.AutoSize = true;
+            this.lbChucvu.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChucvu.Location = new System.Drawing.Point(37, 82);
+            this.lbChucvu.Name = "lbChucvu";
+            this.lbChucvu.Size = new System.Drawing.Size(0, 22);
+            this.lbChucvu.TabIndex = 13;
+            // 
             // LoginGUI
             // 
             this.AcceptButton = this.btnLogin;
@@ -141,6 +161,8 @@
             this.BackgroundImage = global::GUI.Properties.Resources.banner1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(521, 425);
+            this.Controls.Add(this.lbChucvu);
+            this.Controls.Add(this.lbFullname);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -174,5 +196,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lbFullname;
+        private System.Windows.Forms.Label lbChucvu;
     }
 }

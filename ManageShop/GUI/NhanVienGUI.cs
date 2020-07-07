@@ -170,9 +170,7 @@ namespace GUI
                 EnableHuyButton();
                 DisableSuaButton();
                 DisableXoaButton();
-
             }
-
             else if (btnThem.Text.Equals("Lưu"))
             {
                 try
@@ -325,16 +323,20 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult yes = MessageBox.Show("Bạn có chắc xóa thông tin?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (yes == DialogResult.Yes)
+            try
             {
-                string MaNV = txtMaNV.Text;
-                DeleteNhanVien(MaNV);
-                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadNhanVien();
+                DialogResult yes = MessageBox.Show("Bạn có chắc xóa thông tin?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (yes == DialogResult.Yes)
+                {
+                    string MaNV = txtMaNV.Text;
+                    DeleteNhanVien(MaNV);
+                    LoadNhanVien();
+                }
             }
-            else
-                MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         
         private void btnHuy_Click(object sender, EventArgs e)

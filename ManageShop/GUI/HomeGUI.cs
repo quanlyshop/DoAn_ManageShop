@@ -16,7 +16,9 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        private string chucvu;
+        private string fullname;
+       
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.KiemTraTonTai(typeof(NhanVienGUI));
@@ -63,7 +65,9 @@ namespace GUI
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            this.Hide();
+            LoginGUI f = new LoginGUI();
+            f.Show();
         }
 
         private void HomeGUI_Load(object sender, EventArgs e)

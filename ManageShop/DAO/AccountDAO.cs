@@ -16,7 +16,7 @@ namespace DAO
             private set { instance = value; }
         }
         private AccountDAO() { }
-        public bool Login(string usename,string pass)
+        public bool Login(string usename,string pass,string fullname, string chucvu)
         {
             string query = "select *from Account a where a.usename = N'" + usename + "' and a.pass = N'" + pass + "'";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);

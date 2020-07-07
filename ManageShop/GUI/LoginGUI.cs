@@ -43,17 +43,20 @@ namespace GUI
             txtUsename.Text = "";
             txtPass.Text = "";
         }
-        bool Login(string usename, string pass)
+        bool Login(string usename, string pass, string fullname,string chucvu)
         {
-            return AccountDAO.Instance.Login(usename, pass);
+            return AccountDAO.Instance.Login(usename, pass,fullname,chucvu);
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string usename = txtUsename.Text;
             string pass = txtPass.Text;
-            MessageBox.Show("Xin chào " + usename + " " + "!","Camper-Store",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-            if (Login(usename, pass))
+            string fullname = lbFullname.Text;
+            string chucvu = lbChucvu.Text;
+            
+            if (Login(usename, pass, fullname, chucvu))
             {
+                //MessageBox.Show("Xin chào " + "'" + chucvu + "'" + " " + fullname + "!", "Camper-Store", MessageBoxButtons.OK);
                 HomeGUI f = new HomeGUI();
                 this.Hide();
                 f.ShowDialog();

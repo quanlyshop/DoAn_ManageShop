@@ -18,8 +18,8 @@ namespace DTO
         }
         public Table(DataRow row)
         {
-            this.MaHang = (int)row["MaHang"];
-            this.TenHang = row["TenHang"].ToString();
+            this.MaHang = (int)row["MaSP"];
+            this.TenHang = row["TenSP"].ToString();
             this.DonGiaBan = (int)row["DonGiaBan"];
         }
         private int maHang;

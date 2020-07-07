@@ -19,7 +19,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new StoreGUI());
+            Application.Run(new HangHoaGUI());
         }
     }
 }

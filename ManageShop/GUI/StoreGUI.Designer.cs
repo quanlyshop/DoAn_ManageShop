@@ -106,7 +106,7 @@
             this.lsvBill.Size = new System.Drawing.Size(455, 425);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
-            this.lsvBill.View = System.Windows.Forms.View.List;
+            this.lsvBill.View = System.Windows.Forms.View.Details;
             // 
             // button1
             // 

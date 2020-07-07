@@ -49,20 +49,17 @@ GO
 
 
 --Tạo bảng hàng hóa
-Create table HangHoa
+Create table SanPham
 (
-	MaHang int identity not null primary key,
-	TenHang nvarchar(50) not null,
+	MaSP int identity not null primary key,
+	TenSP nvarchar(50) not null,
 	SoLuong int not null,
 	DonGiaGoc int not null,
 	DonGiaBan int not null,
+	Size char(3) not null,
+	NhaSX nvarchar(100) not null,
+	NgaySX date
 )
-Go
-
---Thêm cột nhà cung cấp và ngày nhập vào bảng HangHoa
-Alter table HangHoa add NhaCungCap nvarchar(100)
-Go
-Alter table HangHoa add NgayNhap date
 Go
 
 --Tạo bảng hóa đơn
@@ -75,14 +72,8 @@ Create table HoaDon
 	TongTien int not null
 )
 Go
-
---Tạo bảng chi tiết hóa đơn
-Create table ChiTietHD
-(
-	MaHoaDon int not null REFERENCES HoaDon(MaHD),
-	MaHang int not null REFERENCES HangHoa(MaHang),
-	SoLuong int not null
-)
+Alter table HoaDon add TenSanPham nvarchar(100)
+alter table HoaDon add SoLuong int
 Go
 
 --Tạo bảng tài khoản
@@ -141,38 +132,17 @@ from Account a,NhanVien n
 where a.chucvu=n.chucvu
 
 select *from Account a where a.usename='admin' and a.pass='admin'
-
+go
 ---Thêm dữ liệu cho bảng hàng hóa
-Insert into HangHoa values(N'Streetgang',10,10000,10000,N'SG','07-07-2020')
-Insert into HangHoa values(N'Dergey',20,20000,10000,N'SG','08-07-2020')
-Insert into HangHoa values(N'Bad',9,10000,20000,N'SG','09-07-2020')
-Insert into HangHoa values(N'5TW',10,10000,10000,N'SG','07-07-2020')
+insert into SanPham values(N'Áo thun','10','100000','200000','M',N'Yame','7-7-2020')
+insert into SanPham values(N'Áo Sơ mi','5','200000','450000','X',N'HiYu','8-7-2020')
+insert into SanPham values(N'Local brand','10','200000','500000','M',N'Camper','9-7-2020')
+insert into SanPham values(N'Hoodie','10','50000','220000','M',N'Camper','10-7-2020')
+insert into SanPham values(N'Quần Short','10','50000','250000','M',N'GoGi','11-7-2020')
 go
-
-create proc GetTableList
-as select MaHang, TenHang, DonGiaBan from HangHoa
-go
-exec GetTableList
-go
-
 ---search KhachHang
 create proc SearchKhachHang(@ten nvarchar(100))
 as select *from KhachHang where @ten like TenKH
 go
 
 exec SearchKhachHang N'Đức'
-select *from NhanVien
-select *from KhachHang
-select *from HoaDon
-select *from HangHoa
----Them HoaDon
-insert into HoaDon values('2','9','07-06-2020',100000)
-insert into HoaDon values('3','10','09-06-2020',120000)
-insert into HoaDon values('8','11','08-06-2020',1230000) 
-
----Them ChiTietHD
-insert into ChiTietHD values('3','1',10)
-insert into ChiTietHD values('4','2',4)
-insert into ChiTietHD values('5','3',2)
-
-select *from HoaDon where MaHD=3

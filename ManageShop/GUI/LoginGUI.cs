@@ -51,7 +51,8 @@ namespace GUI
         {
             string usename = txtUsename.Text;
             string pass = txtPass.Text;
-            if(Login(usename, pass))
+            MessageBox.Show("Xin chào " + usename + " " + "!","Camper-Store",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+            if (Login(usename, pass))
             {
                 HomeGUI f = new HomeGUI();
                 this.Hide();
@@ -60,7 +61,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Sai tên đăng nhập hoặc mặt khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sai tên đăng nhập hoặc mặt khẩu", "Đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUsename.Text = "";
                 txtPass.Text = "";
             }

@@ -45,7 +45,7 @@ namespace DAO
         }
         public bool AddData(NhanVienDTO nvDTO)
         {
-            cmd.CommandText = "Insert into NhanVien values ('" + nvDTO.Tennv + "','" + nvDTO.Gioitinh + "','" + nvDTO.Diachi + "','" + nvDTO.Sdt + "','" + nvDTO.Namsinh + "','" + nvDTO.Chucvu + "')";
+            cmd.CommandText = "Insert into NhanVien values ('" + nvDTO.Tennv + "','" + nvDTO.Gioitinh + "','" + nvDTO.Diachi + "','" + nvDTO.Sdt + "','" + nvDTO.Namsinh + "','" + nvDTO.Chucvu + "','" + nvDTO.Luongcoban + ")";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -68,7 +68,7 @@ namespace DAO
         }
         public bool UpdateData(NhanVienDTO nvDTO)
         {
-            cmd.CommandText = "Update NhanVien set TenNhanVien = '" + nvDTO.Tennv + "', GioiTinh = '" + nvDTO.Gioitinh + "', DiaChi='" + nvDTO.Diachi + "', SDT='" + nvDTO.Sdt + "', NamSinh='" + nvDTO.Namsinh + "', chucvu= '" + nvDTO.Chucvu + "' where MaNV ='" + nvDTO.Id + "'";
+            cmd.CommandText = "Update NhanVien set TenNhanVien = '" + nvDTO.Tennv + "', GioiTinh = '" + nvDTO.Gioitinh + "', DiaChi='" + nvDTO.Diachi + "', SDT='" + nvDTO.Sdt + "', NamSinh='" + nvDTO.Namsinh + "', chucvu= '" + nvDTO.Chucvu + "',LuongCoBan= '" + nvDTO.Luongcoban + " where MaNV ='" + nvDTO.Id + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
@@ -115,15 +115,15 @@ namespace DAO
         {
             return DataProvider.Instance.ExecuteQuery("Select * form NhanVien");
         }
-        public bool InsertNhanVien(string TenNhanVien, string GioiTinh, string DiaChi, string SDT,string NamSinh,string chucvu,string luongcoban)
+        public bool InsertNhanVien(string TenNhanVien, string GioiTinh, string DiaChi, string SDT,string NamSinh,string chucvu,string LuongCoBan)
         {
-            string query = string.Format("insert into NhanVien values(N'{0}',N'{1}',N'{2}',{3},'{4}',N'{5}',{6})", TenNhanVien, GioiTinh, DiaChi, SDT, NamSinh, chucvu, luongcoban);
+            string query = string.Format("insert into NhanVien values(N'{0}',N'{1}',N'{2}',{3},'{4}',N'{5}','{6}')", TenNhanVien, GioiTinh, DiaChi, SDT, NamSinh, chucvu, LuongCoBan);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool UpdateNhanVien(string TenNhanVien, string GioiTinh, string DiaChi, string SDT, string NamSinh, string chucvu, string luongcoban, string MaNV)
+        public bool UpdateNhanVien(string TenNhanVien, string GioiTinh, string DiaChi, string SDT, string NamSinh, string chucvu, string LuongCoBan, string MaNV)
         {
-            string query = string.Format("update NhanVien set TenNhanVien=N'{0}',GioiTinh=N'{1}',DiaChi=N'{2}',SDT='{3}',NamSinh='{4}',chucvu=N'{5}',LuongCoBan='{6}' where MaNV='{7}'", TenNhanVien, GioiTinh, DiaChi, SDT, NamSinh, chucvu, luongcoban, MaNV);
+            string query = string.Format("update NhanVien set TenNhanVien=N'{0}',GioiTinh=N'{1}',DiaChi=N'{2}',SDT='{3}',NamSinh='{4}',chucvu=N'{5}',LuongCoBan='{6}' where MaNV='{7}'", TenNhanVien, GioiTinh, DiaChi, SDT, NamSinh, chucvu, LuongCoBan, MaNV);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

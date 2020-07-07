@@ -42,7 +42,7 @@ namespace GUI
         {
             //int tableID = (sender as Table).maHD;
             //ShowBill(tableID);
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

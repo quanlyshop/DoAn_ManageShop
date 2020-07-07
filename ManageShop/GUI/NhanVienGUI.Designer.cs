@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mtbLuongCoBan = new System.Windows.Forms.MaskedTextBox();
             this.cbChucVu = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtNamSinh = new System.Windows.Forms.DateTimePicker();
             this.mtbSDT = new System.Windows.Forms.MaskedTextBox();
             this.cmbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lbSĐT = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,13 +51,9 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.mtbLuongCoBan = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -87,7 +86,16 @@
             this.groupBox1.Size = new System.Drawing.Size(1296, 206);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin nhân viên";
+            this.groupBox1.Text = "THÔNG TIN NHÂN VIÊN";
+            // 
+            // mtbLuongCoBan
+            // 
+            this.mtbLuongCoBan.Location = new System.Drawing.Point(1025, 90);
+            this.mtbLuongCoBan.Mask = "0.000.000";
+            this.mtbLuongCoBan.Name = "mtbLuongCoBan";
+            this.mtbLuongCoBan.Size = new System.Drawing.Size(192, 35);
+            this.mtbLuongCoBan.TabIndex = 6;
+            this.mtbLuongCoBan.ValidatingType = typeof(int);
             // 
             // cbChucVu
             // 
@@ -97,7 +105,7 @@
             this.cbChucVu.Items.AddRange(new object[] {
             "Thu ngân",
             "Nhân viên",
-            "Giữ xe"});
+            "Bảo vệ"});
             this.cbChucVu.Location = new System.Drawing.Point(1025, 35);
             this.cbChucVu.Name = "cbChucVu";
             this.cbChucVu.Size = new System.Drawing.Size(192, 35);
@@ -106,7 +114,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(879, 39);
+            this.label5.Location = new System.Drawing.Point(871, 39);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 27);
@@ -147,6 +155,16 @@
             this.cmbGioiTinh.Size = new System.Drawing.Size(192, 35);
             this.cmbGioiTinh.TabIndex = 2;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(871, 94);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(147, 27);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Lương cơ bản";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -156,6 +174,16 @@
             this.label6.Size = new System.Drawing.Size(103, 27);
             this.label6.TabIndex = 0;
             this.label6.Text = "Năm sinh";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1224, 98);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 27);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "VNĐ";
             // 
             // lbSĐT
             // 
@@ -242,7 +270,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1300, 268);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh sách nhân viên";
+            this.groupBox2.Text = "DANH SÁCH NHÂN VIÊN";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dgvNhanVien
@@ -260,7 +288,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnHuy);
-            this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
@@ -272,7 +299,7 @@
             this.groupBox3.Size = new System.Drawing.Size(1296, 110);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Chức năng";
+            this.groupBox3.Text = "CHỨC NĂNG";
             // 
             // btnHuy
             // 
@@ -282,7 +309,7 @@
             this.btnHuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(876, 36);
+            this.btnHuy.Location = new System.Drawing.Point(709, 36);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(137, 49);
@@ -290,26 +317,6 @@
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Enabled = false;
-            this.btnLuu.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnLuu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::GUI.Properties.Resources.Save_icon;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(709, 36);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(137, 49);
-            this.btnLuu.TabIndex = 0;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -369,40 +376,11 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // mtbLuongCoBan
-            // 
-            this.mtbLuongCoBan.Location = new System.Drawing.Point(1025, 90);
-            this.mtbLuongCoBan.Mask = "0000000";
-            this.mtbLuongCoBan.Name = "mtbLuongCoBan";
-            this.mtbLuongCoBan.Size = new System.Drawing.Size(192, 35);
-            this.mtbLuongCoBan.TabIndex = 6;
-            this.mtbLuongCoBan.ValidatingType = typeof(int);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(871, 94);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 27);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Lương cơ bản";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1224, 98);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 27);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "VNĐ";
-            // 
             // NhanVienGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1339, 631);
+            this.ClientSize = new System.Drawing.Size(1433, 628);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -440,7 +418,6 @@
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;

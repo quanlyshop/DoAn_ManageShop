@@ -91,30 +91,251 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+        public void DisableTextBox()
+        {
+            // disable textbox
+            txtTenKH.Enabled = false;
+            mtbSDT.Enabled = false;
+            cmbGioiTinh.Enabled = false;
+            txtDiaChi.Enabled = false;
+            mtbSoDiem.Enabled = false;
+            dtNamSinh.Enabled = false;
+            txtEmail.Enabled = false;
+        }
+        public void EnableTextBox()
+        {
+            // disable textbox
+            txtTenKH.Enabled = true;
+            txtDiaChi.Enabled = true;
+            mtbSDT.Enabled = true;
+            mtbSoDiem.Enabled = true;
+            cmbGioiTinh.Enabled = true;
+            txtEmail.Enabled = true;
+            dtNamSinh.Enabled = true;
+        }
+        public void EnableHuyButton()
+        {
+            btnHuy.Enabled = true;
+            btnHuy.BackColor = Color.DeepSkyBlue;
+        }
+        public void DisableHuyButton()
+        {
+            btnHuy.Enabled = false;
+            btnHuy.BackColor = Color.White;
+        }
+        public void DisableThemButton()
+        {
+            btnThem.Enabled = false;
+            btnThem.BackColor = Color.White;
+        }
+        public void EnableThemButton()
+        {
+            btnThem.Enabled = true;
+            btnThem.BackColor = Color.Turquoise;
+        }
+        public void EnableSuaButton()
+        {
+            btnSua.Enabled = true;
+            btnSua.BackColor = Color.RoyalBlue;
+        }
+        public void DisableSuaButton()
+        {
+            btnSua.Enabled = false;
+            btnSua.BackColor = Color.White;
+        }
+        public void DisableXoaButton()
+        {
+            btnXoa.Enabled = false;
+            btnXoa.BackColor = Color.White;
+        }
+        public void EnableXoaButton()
+        {
+            btnXoa.Enabled = true;
+            btnXoa.BackColor = Color.Tomato;
+        }
+        public void DisableComboBox()
+        {
+            // disable ComboBox
+           
+            cmbGioiTinh.Enabled = false;
+        }
+        public void EnableComboBox()
+        {
+            
+            cmbGioiTinh.Enabled = true;
+        }
+        public void XoaTrang()
+        {
+            txtTenKH.Text = " ";
+            txtDiaChi.Text = " ";
+            mtbSDT.Text = "";
+            mtbSoDiem.Text = "";
+            cmbGioiTinh.Text = "";
+            txtEmail.Text = "";
+            dtNamSinh.Text = "";
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string tenkh = txtTenKH.Text;
-            string sdt = mtbSDT.Text;
-            string gioitinh = cmbGioiTinh.Text;
-            string diachi = txtDiaChi.Text;
-            string sodiem = mtbSoDiem.Text;
-            string namsinh = dtNamSinh.Text;
-            string email = txtEmail.Text;
-            AddKhachHang(tenkh, sdt, gioitinh,diachi, sodiem, namsinh, email);
+            if (btnThem.Text.Equals("Thêm"))
+            {
+                EnableTextBox();
+                XoaTrang();
+                btnThem.Text = "Lưu";
+
+                EnableHuyButton();
+                DisableSuaButton();
+                DisableXoaButton();
+
+            }
+
+            else if (btnThem.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    string tenkh = txtTenKH.Text;
+                    string sdt = mtbSDT.Text;
+                    string gioitinh = cmbGioiTinh.Text;
+                    string diachi = txtDiaChi.Text;
+                    string sodiem = mtbSoDiem.Text;
+                    string namsinh = dtNamSinh.Text;
+                    string email = txtEmail.Text;
+                    if (tenkh == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'tên khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (namsinh == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'năm sinh khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (diachi == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'địa chi của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (sdt == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'sđt của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+
+                    if (gioitinh == "")
+                    {
+                        MessageBox.Show("Vui lòng chọn giới tính của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (email == "")
+                    {
+                        MessageBox.Show("Vui lòng điền email khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (sodiem == "")
+                    {
+                        MessageBox.Show("Vui lòng điền số điểm của khách hàng","Quản lý khách hàng",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    AddKhachHang(tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email);
+                    LoadKhachHang();
+
+                    //xóa trắng các ô textbox
+                    //XoaTrang();
+
+                    DisableTextBox();
+                    DisableComboBox();
+                    btnThem.Text = "Thêm";
+
+                    DisableHuyButton();
+                    EnableSuaButton();
+                    EnableXoaButton();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string tenkh = txtTenKH.Text;
-            string sdt = mtbSDT.Text;
-            string gioitinh = cmbGioiTinh.Text;
-            string diachi = txtDiaChi.Text;
-            string sodiem = mtbSoDiem.Text;
-            string namsinh = dtNamSinh.Text;
-            string email = txtEmail.Text;
-            string makh = txtMaKH.Text;
-            EditKhachHang(tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email,makh);
+            if (btnSua.Text.Equals("Sửa"))
+            {
+
+                EnableComboBox();
+                EnableTextBox();
+
+                DisableThemButton();
+                DisableXoaButton();
+
+                btnSua.Text = "Lưu";
+
+                EnableHuyButton();
+            }
+            else
+            {
+                string tenkh = txtTenKH.Text;
+                string sdt = mtbSDT.Text;
+                string gioitinh = cmbGioiTinh.Text;
+                string diachi = txtDiaChi.Text;
+                string sodiem = mtbSoDiem.Text;
+                string namsinh = dtNamSinh.Text;
+                string email = txtEmail.Text;
+                string makh = txtMaKH.Text;
+                if (tenkh == "")
+                {
+                    MessageBox.Show("Vui lòng điền 'tên khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (namsinh == "")
+                {
+                    MessageBox.Show("Vui lòng điền 'năm sinh khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (diachi == "")
+                {
+                    MessageBox.Show("Vui lòng điền 'địa chi của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (sdt == "")
+                {
+                    MessageBox.Show("Vui lòng điền 'sđt của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                if (gioitinh == "")
+                {
+                    MessageBox.Show("Vui lòng chọn giới tính của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (email == "")
+                {
+                    MessageBox.Show("Vui lòng điền email khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (sodiem == "")
+                {
+                    MessageBox.Show("Vui lòng điền số điểm của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                EditKhachHang(tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email, makh);
+                LoadKhachHang();
+                DisableTextBox();
+                DisableComboBox();
+                btnSua.Text = "Sửa";
+                DisableHuyButton();
+                EnableThemButton();
+                EnableXoaButton();
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -141,8 +362,23 @@ namespace GUI
             {
                 LoadKhachHang();
                 AddKhachHangBinding();
+                if (btnThem.Text.Equals("Lưu"))
+                {
+                    btnThem.Text = "Thêm";
+                    EnableSuaButton();
+                    EnableXoaButton();
+                }
+
+                if (btnSua.Text.Equals("Lưu"))
+                {
+                    btnSua.Text = "Sửa";
+                    EnableXoaButton();
+                    EnableThemButton();
+                }
+                DisableHuyButton();
+                DisableTextBox();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -154,6 +390,39 @@ namespace GUI
             {
                 string ten = txtSearch.Text;
                 dgvKhachHang.DataSource = SearchKhachHangBUS.Instance.GetKhachHang(ten);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void KhachHangGUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadKhachHang();
+                AddKhachHangBinding();
+                if (btnThem.Text.Equals("Lưu"))
+                {
+                    btnThem.Text = "Thêm";
+                    EnableSuaButton();
+                    EnableXoaButton();
+                }
+
+                if (btnSua.Text.Equals("Lưu"))
+                {
+                    btnSua.Text = "Sửa";
+                    EnableXoaButton();
+                    EnableThemButton();
+                }
+                DisableHuyButton();
+                DisableTextBox();
             }
             catch (Exception ex)
             {

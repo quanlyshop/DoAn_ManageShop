@@ -58,6 +58,12 @@
     <Compile Include="HangHoaGUI.Designer.cs">
       <DependentUpon>HangHoaGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonGUI.Designer.cs">
+      <DependentUpon>HoaDonGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="HangHoaGUI.resx">
       <DependentUpon>HangHoaGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonGUI.resx">
+      <DependentUpon>HoaDonGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeGUI.resx">
       <DependentUpon>HomeGUI.cs</DependentUpon>

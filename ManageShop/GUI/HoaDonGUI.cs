@@ -46,9 +46,6 @@ namespace GUI
                 dtNgayLapHD.DataBindings.Clear();
                 dtNgayLapHD.DataBindings.Add(new Binding("Text", dgvHoaDon.DataSource, "NgayBan"));
 
-                txtTongTien.DataBindings.Clear();
-                txtTongTien.DataBindings.Add(new Binding("Text", dgvHoaDon.DataSource, "TongTien"));
-
                 cmbTenSP.DataBindings.Clear();
                 cmbTenSP.DataBindings.Add(new Binding("Text", dgvHoaDon.DataSource, "TenSanPham"));
 
@@ -321,7 +318,6 @@ namespace GUI
                     float soLuong = float.Parse(txtSoLuong.Text);
                     float donGia = float.Parse(txtDonGia.Text);
                     float tongTien = donGia * soLuong;
-
                     if (maNV == "")
                     {
                         MessageBox.Show("Vui lòng điền 'Mã nhân viên'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);

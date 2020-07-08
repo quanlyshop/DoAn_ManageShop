@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDonGia = new System.Windows.Forms.ComboBox();
+            this.cmbTenSP = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dtNgayLapHD = new System.Windows.Forms.DateTimePicker();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,11 +50,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.cmbTenSP = new System.Windows.Forms.ComboBox();
-            this.txtDonGia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -61,8 +59,6 @@
             // 
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.cmbTenSP);
-            this.groupBox1.Controls.Add(this.txtTongTien);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnHuy);
@@ -87,6 +83,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN HÓA ĐƠN";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Enabled = false;
+            this.txtDonGia.FormattingEnabled = true;
+            this.txtDonGia.Location = new System.Drawing.Point(865, 94);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(263, 41);
+            this.txtDonGia.TabIndex = 7;
+            // 
+            // cmbTenSP
+            // 
+            this.cmbTenSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTenSP.FormattingEnabled = true;
+            this.cmbTenSP.Location = new System.Drawing.Point(865, 43);
+            this.cmbTenSP.Name = "cmbTenSP";
+            this.cmbTenSP.Size = new System.Drawing.Size(263, 35);
+            this.cmbTenSP.TabIndex = 6;
             // 
             // btnThem
             // 
@@ -144,6 +158,14 @@
             this.dtNgayLapHD.Name = "dtNgayLapHD";
             this.dtNgayLapHD.Size = new System.Drawing.Size(205, 35);
             this.dtNgayLapHD.TabIndex = 2;
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Location = new System.Drawing.Point(865, 155);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(263, 35);
+            this.txtSoLuong.TabIndex = 1;
             // 
             // label7
             // 
@@ -260,51 +282,6 @@
             this.dgvHoaDon.Size = new System.Drawing.Size(1385, 212);
             this.dgvHoaDon.TabIndex = 0;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(683, 218);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 25);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "TỔNG TIỀN";
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Enabled = false;
-            this.txtTongTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(865, 213);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(263, 35);
-            this.txtTongTien.TabIndex = 5;
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(865, 155);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(263, 35);
-            this.txtSoLuong.TabIndex = 1;
-            // 
-            // cmbTenSP
-            // 
-            this.cmbTenSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTenSP.FormattingEnabled = true;
-            this.cmbTenSP.Location = new System.Drawing.Point(865, 43);
-            this.cmbTenSP.Name = "cmbTenSP";
-            this.cmbTenSP.Size = new System.Drawing.Size(263, 35);
-            this.cmbTenSP.TabIndex = 6;
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Enabled = false;
-            this.txtDonGia.FormattingEnabled = true;
-            this.txtDonGia.Location = new System.Drawing.Point(865, 94);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(263, 41);
-            this.txtDonGia.TabIndex = 7;
-            // 
             // HoaDonGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -315,6 +292,7 @@
             this.Name = "HoaDonGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDonGUI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HoaDonGUI_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -345,8 +323,6 @@
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvHoaDon;
-        private System.Windows.Forms.TextBox txtTongTien;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.ComboBox cmbTenSP;
         private System.Windows.Forms.ComboBox txtDonGia;

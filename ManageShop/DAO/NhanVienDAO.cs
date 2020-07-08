@@ -117,7 +117,7 @@ namespace DAO
         }
         public bool InsertNhanVien(string TenNhanVien, string GioiTinh, string DiaChi, string SDT,string NamSinh,string chucvu,string LuongCoBan)
         {
-            string query = string.Format("insert into NhanVien values(N'{0}',N'{1}',N'{2}',{3},'{4}',N'{5}','{6}')", TenNhanVien, GioiTinh, DiaChi, SDT, NamSinh, chucvu, LuongCoBan);
+            string query = string.Format("insert into NhanVien values(N'{0}',N'{1}',N'{2}','{3}','{4}',N'{5}','{6}')", TenNhanVien, GioiTinh, DiaChi, SDT, NamSinh, chucvu, LuongCoBan);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

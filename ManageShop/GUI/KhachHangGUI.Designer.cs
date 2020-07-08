@@ -85,8 +85,7 @@
             // mtbSDT
             // 
             this.mtbSDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbSDT.Location = new System.Drawing.Point(593, 36);
-            this.mtbSDT.Mask = "(999) 000-0000";
+            this.mtbSDT.Location = new System.Drawing.Point(593, 43);
             this.mtbSDT.Name = "mtbSDT";
             this.mtbSDT.Size = new System.Drawing.Size(172, 35);
             this.mtbSDT.TabIndex = 3;
@@ -101,7 +100,7 @@
             "Nam",
             "Nữ",
             "Khác"});
-            this.cmbGioiTinh.Location = new System.Drawing.Point(960, 36);
+            this.cmbGioiTinh.Location = new System.Drawing.Point(960, 43);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(102, 35);
             this.cmbGioiTinh.TabIndex = 2;
@@ -120,7 +119,7 @@
             // 
             this.lbSĐT.AutoSize = true;
             this.lbSĐT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSĐT.Location = new System.Drawing.Point(466, 40);
+            this.lbSĐT.Location = new System.Drawing.Point(466, 47);
             this.lbSĐT.Name = "lbSĐT";
             this.lbSĐT.Size = new System.Drawing.Size(55, 27);
             this.lbSĐT.TabIndex = 0;
@@ -148,7 +147,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(857, 40);
+            this.label3.Location = new System.Drawing.Point(857, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 27);
             this.label3.TabIndex = 0;
@@ -176,7 +175,7 @@
             // 
             this.txtMaKH.Enabled = false;
             this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Location = new System.Drawing.Point(156, 36);
+            this.txtMaKH.Location = new System.Drawing.Point(156, 43);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(63, 35);
             this.txtMaKH.TabIndex = 1;
@@ -185,7 +184,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 40);
+            this.label1.Location = new System.Drawing.Point(55, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 27);
             this.label1.TabIndex = 0;
@@ -201,7 +200,7 @@
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(25, 456);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1308, 129);
@@ -327,7 +326,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvKhachHang);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(25, 243);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1310, 207);
@@ -365,7 +364,6 @@
             // 
             this.mtbSoDiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbSoDiem.Location = new System.Drawing.Point(593, 104);
-            this.mtbSoDiem.Mask = "000";
             this.mtbSoDiem.Name = "mtbSoDiem";
             this.mtbSoDiem.Size = new System.Drawing.Size(172, 35);
             this.mtbSoDiem.TabIndex = 5;
@@ -403,13 +401,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1433, 597);
+            this.ClientSize = new System.Drawing.Size(1433, 628);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "KhachHangGUI";
             this.Text = "KhachHangGUI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.KhachHangGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.groupBox3.ResumeLayout(false);

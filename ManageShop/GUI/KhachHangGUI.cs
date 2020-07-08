@@ -23,6 +23,8 @@ namespace GUI
         }
         void LoadKhachHang()
         {
+            DisableTextBox();
+            DisableHuyButton();
             string query = "Select *from KhachHang";
             dgvKhachHang.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }

@@ -280,9 +280,6 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnHuy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(665, 39);
@@ -295,9 +292,6 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::GUI.Properties.Resources.Close_2_icon;
@@ -313,9 +307,6 @@
             // 
             // btnSua
             // 
-            this.btnSua.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::GUI.Properties.Resources.Fix_icon;
@@ -332,9 +323,6 @@
             // btnThem
             // 
             this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnThem.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::GUI.Properties.Resources.Actions_list_add_user_icon;

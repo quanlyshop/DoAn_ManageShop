@@ -91,7 +91,6 @@
             // mtbLuongCoBan
             // 
             this.mtbLuongCoBan.Location = new System.Drawing.Point(1025, 90);
-            this.mtbLuongCoBan.Mask = "0.000.000";
             this.mtbLuongCoBan.Name = "mtbLuongCoBan";
             this.mtbLuongCoBan.Size = new System.Drawing.Size(192, 35);
             this.mtbLuongCoBan.TabIndex = 6;
@@ -134,7 +133,6 @@
             // 
             this.mtbSDT.Location = new System.Drawing.Point(654, 90);
             this.mtbSDT.Margin = new System.Windows.Forms.Padding(4);
-            this.mtbSDT.Mask = "0000000000";
             this.mtbSDT.Name = "mtbSDT";
             this.mtbSDT.Size = new System.Drawing.Size(192, 35);
             this.mtbSDT.TabIndex = 5;
@@ -304,11 +302,8 @@
             // btnHuy
             // 
             this.btnHuy.Enabled = false;
-            this.btnHuy.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnHuy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(709, 36);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
@@ -320,11 +315,8 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::GUI.Properties.Resources.Close_2_icon;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(540, 36);
@@ -339,11 +331,8 @@
             // 
             // btnSua
             // 
-            this.btnSua.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::GUI.Properties.Resources.Fix_icon;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(370, 36);
@@ -359,11 +348,8 @@
             // btnThem
             // 
             this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnThem.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::GUI.Properties.Resources.Actions_list_add_user_icon;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(206, 36);
@@ -388,6 +374,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhanVienGUI";
             this.Text = "NhanVienGUI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.NhanVienGUI_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

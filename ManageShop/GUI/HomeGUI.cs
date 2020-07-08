@@ -27,9 +27,10 @@ namespace GUI
                 frm.Activate();
             }
             else
-            {  
+            {
+                //IsMdiContainer = true;
                 NhanVienGUI f = new NhanVienGUI();
-                //f.MdiParent = this;
+                f.MdiParent = this;
                 f.Show();
             }
             
@@ -38,21 +39,24 @@ namespace GUI
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             KhachHangGUI f = new KhachHangGUI();
-            //f.MdiParent = this;
-            f.ShowDialog();
+            //IsMdiContainer = true;
+            f.MdiParent = this;
+            f.Show();
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //IsMdiContainer = true;
             RegisterGUI f = new RegisterGUI();
-            //f.MdiParent = this;
+            f.MdiParent = this;
             f.Show();
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //IsMdiContainer = true;
             HangHoaGUI f = new HangHoaGUI();
-            //f.MdiParent = this;
+            f.MdiParent = this;
             f.Show();
         }
 
@@ -65,7 +69,7 @@ namespace GUI
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Hide();
+            //IsMdiContainer = true;
             LoginGUI f = new LoginGUI();
             f.Show();
         }
@@ -95,5 +99,20 @@ namespace GUI
                 e.Cancel = true;
             }
         }
+
+        private void btnHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //IsMdiContainer = true;
+            HoaDonGUI f = new HoaDonGUI();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+     
     }
 }

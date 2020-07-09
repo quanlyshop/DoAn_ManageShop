@@ -40,6 +40,9 @@ CREATE TABLE KhachHang
 	Email nvarchar(50)
 )
 GO
+--Alter Table KhachHang
+--	Add Constraint ck_DienThoaiKH 
+--	Check (len(SDT)=10 or len(SDT)=11)
 --Rang buoc sdt co 10 so
 --ALTER TABLE KhachHang ADD CONSTRAINT CK_SDTKhachHang CHECK (LEN(SDT)=10)
 --go
@@ -168,7 +171,7 @@ select *from HoaDon
 select *from SanPham
 select *from NhanVien
 select *from KhachHang
-
+select *from Account
 ---Tính tổng tiền
 go
 create function TongTien (@maHD int)
@@ -214,3 +217,55 @@ begin transaction
 	else
 		commit transaction
 		--drop trigger trg_DonGia
+go
+
+---Tìm kiếm sản phẩm
+create proc Search_SanPham(@Ten nvarchar(100))
+as
+begin 
+	select *
+	from SanPham sp 
+	where sp.TenSP like '%' + @Ten + '%' or sp.MaSP like '%' + @Ten + '%' or sp.NhaSX like '%' + @Ten + '%' or sp.Size like '%' + @Ten + '%'
+end
+go
+
+exec Search_SanPham N'Áo thun'
+go
+
+---Tìm kiếm hóa đơn
+create proc Search_HoaDon(@Ten nvarchar(100))
+as
+begin 
+	select *
+	from HoaDon hd 
+	where hd.MaHD like '%' + @Ten + '%' Or hd.MaKH like '%' + @Ten + '%' or hd.NgayBan like '%' + @Ten + '%' or hd.TenSanPham like '%' + @ten + '%' or hd.TongTien like '%' + @Ten + '%'
+end
+go
+
+exec Search_HoaDon N'7'
+go
+
+---Get HoaDon
+create proc GetHoaDon(@MaHD int)
+as
+begin
+	select hd.MaHD,nv.TenNhanVien, hd.TenSanPham,hd.DonGia,hd.SoLuong,hd.TongTien,hd.NgayBan 
+	from HoaDon hd, NhanVien nv
+	where @MaHD=hd.MaHD and hd.MaNV=nv.MaNV
+end
+go
+
+exec GetHoaDon '7'
+go
+
+---Lấy danh sách sản phẩm
+create proc GetListSanPham
+as
+	begin
+		select *
+		from SanPham
+end
+go
+
+exec GetListSanPham
+go

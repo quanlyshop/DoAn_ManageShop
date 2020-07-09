@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvRegister = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -55,7 +57,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvRegister);
-            this.panel2.Location = new System.Drawing.Point(6, 246);
+            this.panel2.Location = new System.Drawing.Point(6, 289);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1077, 204);
             this.panel2.TabIndex = 1;
@@ -78,7 +80,7 @@
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 7);
+            this.groupBox1.Location = new System.Drawing.Point(7, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(685, 86);
             this.groupBox1.TabIndex = 3;
@@ -160,7 +162,7 @@
             this.groupBox2.Controls.Add(this.txtid);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 99);
+            this.groupBox2.Location = new System.Drawing.Point(7, 142);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1075, 126);
             this.groupBox2.TabIndex = 4;
@@ -195,7 +197,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(741, 33);
+            this.label6.Location = new System.Drawing.Point(773, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 25);
             this.label6.TabIndex = 6;
@@ -266,11 +268,17 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "ID";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // RegisterGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 492);
+            this.ClientSize = new System.Drawing.Size(1187, 534);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -308,5 +316,6 @@
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

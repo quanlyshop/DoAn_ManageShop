@@ -45,8 +45,6 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnXem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -57,6 +55,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnXem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,7 +79,7 @@
             this.dtNamSinh.Location = new System.Drawing.Point(593, 160);
             this.dtNamSinh.Name = "dtNamSinh";
             this.dtNamSinh.Size = new System.Drawing.Size(172, 35);
-            this.dtNamSinh.TabIndex = 4;
+            this.dtNamSinh.TabIndex = 7;
             // 
             // mtbSDT
             // 
@@ -88,7 +87,7 @@
             this.mtbSDT.Location = new System.Drawing.Point(593, 43);
             this.mtbSDT.Name = "mtbSDT";
             this.mtbSDT.Size = new System.Drawing.Size(172, 35);
-            this.mtbSDT.TabIndex = 3;
+            this.mtbSDT.TabIndex = 2;
             // 
             // cmbGioiTinh
             // 
@@ -103,7 +102,7 @@
             this.cmbGioiTinh.Location = new System.Drawing.Point(960, 43);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(102, 35);
-            this.cmbGioiTinh.TabIndex = 2;
+            this.cmbGioiTinh.TabIndex = 3;
             // 
             // label6
             // 
@@ -131,7 +130,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(157, 160);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(277, 35);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 6;
             // 
             // label4
             // 
@@ -192,11 +191,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnXem);
             this.groupBox3.Controls.Add(this.btnHuy);
             this.groupBox3.Controls.Add(this.btnSearch);
             this.groupBox3.Controls.Add(this.txtSearch);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.btnXem);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
@@ -207,11 +205,12 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "CHỨC NĂNG";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btnHuy
             // 
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(515, 42);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(117, 54);
@@ -243,38 +242,13 @@
             this.txtSearch.Size = new System.Drawing.Size(184, 40);
             this.txtSearch.TabIndex = 7;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(775, 53);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(190, 33);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Tên khách hàng";
-            // 
-            // btnXem
-            // 
-            this.btnXem.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btnXem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnXem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXem.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXem.Location = new System.Drawing.Point(645, 42);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(117, 54);
-            this.btnXem.TabIndex = 1;
-            this.btnXem.Text = "Xem";
-            this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
             // btnXoa
             // 
             this.btnXoa.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
             this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::GUI.Properties.Resources.Close_2_icon;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(373, 42);
@@ -292,7 +266,7 @@
             this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::GUI.Properties.Resources.Fix_icon;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(229, 42);
@@ -311,7 +285,7 @@
             this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::GUI.Properties.Resources.Actions_list_add_user_icon;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(90, 42);
@@ -366,7 +340,7 @@
             this.mtbSoDiem.Location = new System.Drawing.Point(593, 104);
             this.mtbSoDiem.Name = "mtbSoDiem";
             this.mtbSoDiem.Size = new System.Drawing.Size(172, 35);
-            this.mtbSoDiem.TabIndex = 5;
+            this.mtbSoDiem.TabIndex = 4;
             this.mtbSoDiem.ValidatingType = typeof(int);
             // 
             // txtEmail
@@ -375,7 +349,7 @@
             this.txtEmail.Location = new System.Drawing.Point(960, 104);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(237, 35);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 5;
             // 
             // label7
             // 
@@ -396,6 +370,18 @@
             this.label5.Size = new System.Drawing.Size(64, 27);
             this.label5.TabIndex = 0;
             this.label5.Text = "Điểm";
+            // 
+            // btnXem
+            // 
+            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXem.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXem.Location = new System.Drawing.Point(660, 42);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(117, 54);
+            this.btnXem.TabIndex = 10;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // KhachHangGUI
             // 
@@ -441,14 +427,13 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.MaskedTextBox mtbSoDiem;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnXem;
     }
 }

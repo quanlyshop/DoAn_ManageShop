@@ -38,15 +38,13 @@ namespace GUI
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            txtUsename.Text = "";
-            txtPass.Text = "";
-        }
         bool Login(string usename, string pass, string fullname,string chucvu)
         {
-            return AccountDAO.Instance.Login(usename, pass,fullname,chucvu);
+            return AccountDAO.Instance.Login(usename, pass, fullname, chucvu);
         }
+        public delegate void CheckpPermission(int per);
+        CheckpPermission chk;
+        HomeGUI frm;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string usename = txtUsename.Text;
@@ -56,7 +54,7 @@ namespace GUI
             
             if (Login(usename, pass, fullname, chucvu))
             {
-                //MessageBox.Show("Xin chào " + "'" + chucvu + "'" + " " + fullname + "!", "Camper-Store", MessageBoxButtons.OK);
+                //MessageBox.Show("Xin chào '" + chucvu + "'", "Camper-Store", MessageBoxButtons.OK);
                 HomeGUI f = new HomeGUI();
                 this.Hide();
                 f.ShowDialog();

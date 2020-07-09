@@ -16,6 +16,10 @@ namespace GUI
 {
     public partial class HoaDonGUI : Form
     {
+        private string chucvu;
+
+        public string Chucvu { get => chucvu; set => chucvu = value; }
+
         public HoaDonGUI()
         {
             InitializeComponent();
@@ -317,7 +321,7 @@ namespace GUI
                     string tenSP = cmbTenSP.Text;
                     float soLuong = float.Parse(txtSoLuong.Text);
                     float donGia = float.Parse(txtDonGia.Text);
-                    float tongTien = donGia * soLuong;
+                    float tongTien = (donGia * soLuong);
                     if (maNV == "")
                     {
                         MessageBox.Show("Vui lòng điền 'Mã nhân viên'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -425,6 +429,20 @@ namespace GUI
         private void HoaDonGUI_Load(object sender, EventArgs e)
         {
             LayDuLieuSanPham();
+        }
+
+        private void btnSearchHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EnableHuyButton();
+                string ten = txtSearchHD.Text;
+                dgvHoaDon.DataSource = SearchHoaDonBUS.Instance.GetHoaDon(ten);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

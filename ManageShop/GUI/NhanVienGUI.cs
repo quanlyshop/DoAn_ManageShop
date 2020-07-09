@@ -16,8 +16,13 @@ namespace GUI
 {
     public partial class NhanVienGUI : Form
     {
+        private string chucvu;
+        
         //NhanVienBUS nvBUS = new NhanVienBUS();
         NhanVienDTO nvDTO = new NhanVienDTO();
+
+        public string Chucvu { get => chucvu; set => chucvu = value; }
+
         //NhanVienDAO nvDAO = new NhanVienDAO();
         //tạo một cái cờ
         //int flag = 0;
@@ -31,13 +36,28 @@ namespace GUI
         }
         void AddNhanVienBinding()
         {
+            txtMaNV.DataBindings.Clear();
             txtMaNV.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "MaNV"));
+
+            txtTenNV.DataBindings.Clear();
             txtTenNV.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "TenNhanVien"));
+
+            cmbGioiTinh.DataBindings.Clear();
             cmbGioiTinh.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "GioiTinh"));
+
+            txtDiaChi.DataBindings.Clear();
             txtDiaChi.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "DiaChi"));
+
+            mtbSDT.DataBindings.Clear();
             mtbSDT.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "SDT"));
+
+            dtNamSinh.DataBindings.Clear();
             dtNamSinh.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "NamSinh"));
+
+            cbChucVu.DataBindings.Clear();
             cbChucVu.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "chucvu"));
+
+            mtbLuongCoBan.DataBindings.Clear();
             mtbLuongCoBan.DataBindings.Add(new Binding("Text", dgvNhanVien.DataSource, "luongcoban"));
         }
 
@@ -236,6 +256,7 @@ namespace GUI
                     DisableHuyButton();
                     EnableSuaButton();
                     EnableXoaButton();
+                    AddNhanVienBinding();
                 }
                 catch (Exception ex)
                 {
@@ -343,8 +364,6 @@ namespace GUI
         {
             try
             {
-                LoadNhanVien();
-                AddNhanVienBinding();
                 if (btnThem.Text.Equals("Lưu"))
                 {
                     btnThem.Text = "Thêm";
@@ -360,6 +379,8 @@ namespace GUI
                 }
                 DisableHuyButton();
                 DisableTextBox();
+                LoadNhanVien();
+                AddNhanVienBinding();
             }
             catch(Exception ex)
             {

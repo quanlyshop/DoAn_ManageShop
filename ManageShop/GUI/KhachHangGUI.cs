@@ -30,14 +30,36 @@ namespace GUI
         }
         void AddKhachHangBinding()
         {
-            txtMaKH.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "MaKH"));
-            txtTenKH.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "TenKH"));
-            mtbSDT.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "SDT"));
-            cmbGioiTinh.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "GioiTinh"));
-            txtDiaChi.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "DiaChi"));
-            mtbSoDiem.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "SoDiem"));
-            dtNamSinh.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "NamSinh"));
-            txtEmail.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "Email"));
+            try
+            {
+                txtMaKH.DataBindings.Clear();
+                txtMaKH.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "MaKH"));
+
+                txtTenKH.DataBindings.Clear();
+                txtTenKH.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "TenKH"));
+
+                mtbSDT.DataBindings.Clear();
+                mtbSDT.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "SDT"));
+
+                cmbGioiTinh.DataBindings.Clear();
+                cmbGioiTinh.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "GioiTinh"));
+
+                txtDiaChi.DataBindings.Clear();
+                txtDiaChi.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "DiaChi"));
+
+                mtbSoDiem.DataBindings.Clear();
+                mtbSoDiem.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "SoDiem"));
+
+                dtNamSinh.DataBindings.Clear();
+                dtNamSinh.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "NamSinh"));
+
+                txtEmail.DataBindings.Clear();
+                txtEmail.DataBindings.Add(new Binding("Text", dgvKhachHang.DataSource, "Email"));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         void AddKhachHang(string tenkh, string sdt, string gioitinh, string diachi, string sodiem, string namsinh, string email)
         {
@@ -244,11 +266,6 @@ namespace GUI
                     }
 
                     AddKhachHang(tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email);
-                    LoadKhachHang();
-
-                    //xóa trắng các ô textbox
-                    //XoaTrang();
-
                     DisableTextBox();
                     DisableComboBox();
                     btnThem.Text = "Thêm";
@@ -256,6 +273,9 @@ namespace GUI
                     DisableHuyButton();
                     EnableSuaButton();
                     EnableXoaButton();
+
+                    AddKhachHangBinding();
+                    LoadKhachHang();
                 }
                 catch (Exception ex)
                 {
@@ -330,13 +350,14 @@ namespace GUI
                     return;
                 }
                 EditKhachHang(tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email, makh);
-                LoadKhachHang();
                 DisableTextBox();
                 DisableComboBox();
                 btnSua.Text = "Sửa";
                 DisableHuyButton();
                 EnableThemButton();
                 EnableXoaButton();
+                LoadKhachHang();
+                AddKhachHangBinding();
             }
         }
 
@@ -362,8 +383,6 @@ namespace GUI
         {
             try
             {
-                LoadKhachHang();
-                AddKhachHangBinding();
                 if (btnThem.Text.Equals("Lưu"))
                 {
                     btnThem.Text = "Thêm";
@@ -379,6 +398,9 @@ namespace GUI
                 }
                 DisableHuyButton();
                 DisableTextBox();
+
+                LoadKhachHang();
+                AddKhachHangBinding();
             }
             catch (Exception ex)
             {
@@ -397,6 +419,7 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void KhachHangGUI_Load(object sender, EventArgs e)
@@ -408,8 +431,6 @@ namespace GUI
         {
             try
             {
-                LoadKhachHang();
-                AddKhachHangBinding();
                 if (btnThem.Text.Equals("Lưu"))
                 {
                     btnThem.Text = "Thêm";
@@ -425,11 +446,25 @@ namespace GUI
                 }
                 DisableHuyButton();
                 DisableTextBox();
+
+                LoadKhachHang();
+                AddKhachHangBinding();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            LoadKhachHang();
+            AddKhachHangBinding();
         }
     }
 }

@@ -19,7 +19,6 @@ namespace GUI
             LoadAccount();
             AddAcountBinding();
         }
-
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -37,10 +36,19 @@ namespace GUI
         }
         void AddAcountBinding()
         {
+            txtid.DataBindings.Clear();
             txtid.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "id"));
+
+            txtfullname.DataBindings.Clear();
             txtfullname.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "fullname"));
+
+            txtusename.DataBindings.Clear();
             txtusename.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "usename"));
+
+            txtpass.DataBindings.Clear();
             txtpass.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "pass"));
+
+            cbchucvu.DataBindings.Clear();
             cbchucvu.DataBindings.Add(new Binding("Text", dgvRegister.DataSource, "chucvu"));
         }
         private void RegisterGUI_Load(object sender, EventArgs e)
@@ -62,10 +70,6 @@ namespace GUI
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                MessageBox.Show("Mã nhân viên không tồn tại");
             }
         }
         void EditAccount(string fullname, string usename, string pass, string chucvu, string id)
@@ -137,11 +141,8 @@ namespace GUI
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            txtid.Text = "";
-            txtfullname.Text = "";
-            txtusename.Text = "";
-            txtpass.Text = "";
-            cbchucvu.Text = "";
+            LoadAccount();
+            AddAcountBinding();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

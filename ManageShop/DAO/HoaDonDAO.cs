@@ -38,5 +38,17 @@ namespace DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public DataTable GetHoaDon(string ten)
+        {
+            try
+            {
+                string query = string.Format("Search_HoaDon " + ten);
+                return DataProvider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

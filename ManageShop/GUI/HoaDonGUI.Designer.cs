@@ -50,6 +50,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txtSearchHD = new System.Windows.Forms.TextBox();
+            this.btnSearchHD = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -57,6 +59,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSearchHD);
+            this.groupBox1.Controls.Add(this.txtSearchHD);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.cmbTenSP);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -100,7 +104,7 @@
             this.cmbTenSP.Location = new System.Drawing.Point(865, 43);
             this.cmbTenSP.Name = "cmbTenSP";
             this.cmbTenSP.Size = new System.Drawing.Size(263, 35);
-            this.cmbTenSP.TabIndex = 6;
+            this.cmbTenSP.TabIndex = 3;
             // 
             // btnThem
             // 
@@ -109,7 +113,7 @@
             this.btnThem.Location = new System.Drawing.Point(793, 279);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(132, 51);
-            this.btnThem.TabIndex = 3;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -118,10 +122,10 @@
             // 
             this.btnSua.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(933, 279);
+            this.btnSua.Location = new System.Drawing.Point(934, 279);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(132, 51);
-            this.btnSua.TabIndex = 3;
+            this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -130,10 +134,10 @@
             // 
             this.btnHuy.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(1217, 279);
+            this.btnHuy.Location = new System.Drawing.Point(1216, 279);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(132, 51);
-            this.btnHuy.TabIndex = 3;
+            this.btnHuy.TabIndex = 8;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -142,10 +146,10 @@
             // 
             this.btnXoa.BackColor = System.Drawing.Color.Tomato;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Location = new System.Drawing.Point(1077, 279);
+            this.btnXoa.Location = new System.Drawing.Point(1075, 279);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(132, 51);
-            this.btnXoa.TabIndex = 3;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -165,7 +169,7 @@
             this.txtSoLuong.Location = new System.Drawing.Point(865, 155);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(263, 35);
-            this.txtSoLuong.TabIndex = 1;
+            this.txtSoLuong.TabIndex = 4;
             // 
             // label7
             // 
@@ -203,7 +207,7 @@
             this.txtMaKH.Location = new System.Drawing.Point(242, 213);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(206, 35);
-            this.txtMaKH.TabIndex = 1;
+            this.txtMaKH.TabIndex = 2;
             // 
             // label4
             // 
@@ -282,6 +286,24 @@
             this.dgvHoaDon.Size = new System.Drawing.Size(1385, 212);
             this.dgvHoaDon.TabIndex = 0;
             // 
+            // txtSearchHD
+            // 
+            this.txtSearchHD.Location = new System.Drawing.Point(470, 284);
+            this.txtSearchHD.Name = "txtSearchHD";
+            this.txtSearchHD.Size = new System.Drawing.Size(228, 40);
+            this.txtSearchHD.TabIndex = 9;
+            // 
+            // btnSearchHD
+            // 
+            this.btnSearchHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchHD.Location = new System.Drawing.Point(316, 279);
+            this.btnSearchHD.Name = "btnSearchHD";
+            this.btnSearchHD.Size = new System.Drawing.Size(132, 51);
+            this.btnSearchHD.TabIndex = 10;
+            this.btnSearchHD.Text = "Tìm kiếm";
+            this.btnSearchHD.UseVisualStyleBackColor = true;
+            this.btnSearchHD.Click += new System.EventHandler(this.btnSearchHD_Click);
+            // 
             // HoaDonGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -326,5 +348,7 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.ComboBox cmbTenSP;
         private System.Windows.Forms.ComboBox txtDonGia;
+        private System.Windows.Forms.Button btnSearchHD;
+        private System.Windows.Forms.TextBox txtSearchHD;
     }
 }

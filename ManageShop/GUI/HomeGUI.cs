@@ -18,7 +18,10 @@ namespace GUI
         }
         private string chucvu;
         private string fullname;
-       
+
+        public string Fullname { get => fullname; set => fullname = value; }
+        public string Chucvu { get => chucvu; set => chucvu = value; }
+
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.KiemTraTonTai(typeof(NhanVienGUI));
@@ -35,7 +38,26 @@ namespace GUI
             }
             
         }
-
+        public void DisEndMenu(bool e)
+        {
+            btnNhanVien.Enabled = !e;
+            btnKhachHang.Enabled = e;
+            btnAccount.Enabled = !e;
+            btnKhachHang.Enabled = e;
+            btnLogout.Enabled = e;
+            btnSanPham.Enabled = e;
+        }
+        public void get_permission(int per)
+        {
+            if (per == 1)
+            {
+                DisEndMenu(true);
+                btnLogout.Enabled = true;
+            }
+            else
+                DisEndMenu(false);
+                btnLogout.Enabled = true;
+        }
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             KhachHangGUI f = new KhachHangGUI();

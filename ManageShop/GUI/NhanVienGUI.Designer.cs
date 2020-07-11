@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
+            DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienGUI));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mtbLuongCoBan = new System.Windows.Forms.MaskedTextBox();
             this.cbChucVu = new System.Windows.Forms.ComboBox();
@@ -54,10 +59,20 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
+            this.xrDesignBarManager1 = new DevExpress.XtraReports.UserDesigner.XRDesignBarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(recentlyUsedItemsComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(designRepositoryItemComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -362,6 +377,69 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // reportDesigner1
+            // 
+            this.reportDesigner1.ContainerControl = null;
+            xrDesignPanelListener1.DesignControl = this.xrDesignBarManager1;
+            this.reportDesigner1.DesignPanelListeners.AddRange(new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener[] {
+            xrDesignPanelListener1});
+            this.reportDesigner1.Form = this;
+            // 
+            // xrDesignBarManager1
+            // 
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlTop);
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlBottom);
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlLeft);
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlRight);
+            recentlyUsedItemsComboBox1.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            recentlyUsedItemsComboBox1.AppearanceDropDown.Options.UseFont = true;
+            recentlyUsedItemsComboBox1.AutoHeight = false;
+            recentlyUsedItemsComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.xrDesignBarManager1.FontNameBox = recentlyUsedItemsComboBox1;
+            designRepositoryItemComboBox1.AutoHeight = false;
+            designRepositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.xrDesignBarManager1.FontSizeBox = designRepositoryItemComboBox1;
+            this.xrDesignBarManager1.Form = this;
+            this.xrDesignBarManager1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("xrDesignBarManager1.ImageStream")));
+            this.xrDesignBarManager1.MaxItemId = 76;
+            this.xrDesignBarManager1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignBarManager1.Updates.AddRange(new string[] {
+            "Toolbox"});
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.xrDesignBarManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1433, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 628);
+            this.barDockControlBottom.Manager = this.xrDesignBarManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1433, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.xrDesignBarManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 628);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1433, 0);
+            this.barDockControlRight.Manager = this.xrDesignBarManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 628);
+            // 
             // NhanVienGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
@@ -370,6 +448,10 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhanVienGUI";
@@ -381,7 +463,12 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(recentlyUsedItemsComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(designRepositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -413,5 +500,11 @@
         private System.Windows.Forms.MaskedTextBox mtbLuongCoBan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private DevExpress.XtraReports.UserDesigner.XRDesignMdiController reportDesigner1;
+        private DevExpress.XtraReports.UserDesigner.XRDesignBarManager xrDesignBarManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
     }
 }

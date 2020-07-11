@@ -269,3 +269,14 @@ go
 
 exec GetListSanPham
 go
+
+---Report GetLishKhachHang
+create proc GetLishKhachHang
+as
+begin
+	select *from KhachHang
+end
+go
+
+exec GetLishKhachHang
+go

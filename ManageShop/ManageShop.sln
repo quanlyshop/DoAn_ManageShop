@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{845F077B-2CE1-42ED-A70F-A1F9C51636B1}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_QL_S_QA", "..\..\Setup\Setup_QL_S_QA\Setup_QL_S_QA.vdproj", "{A74F52E4-3668-43D0-ACFD-6E474A00F91D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,8 +33,6 @@ Global
 		{845F077B-2CE1-42ED-A70F-A1F9C51636B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845F077B-2CE1-42ED-A70F-A1F9C51636B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845F077B-2CE1-42ED-A70F-A1F9C51636B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A74F52E4-3668-43D0-ACFD-6E474A00F91D}.Debug|Any CPU.ActiveCfg = Debug
-		{A74F52E4-3668-43D0-ACFD-6E474A00F91D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

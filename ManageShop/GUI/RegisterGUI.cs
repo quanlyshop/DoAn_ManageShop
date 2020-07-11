@@ -149,5 +149,26 @@ namespace GUI
         {
 
         }
+
+        //Phím tắt
+        private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnThem_Click(this, new EventArgs());
+        }
+
+        private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnXoa_Click(this, new EventArgs());
+        }
+
+        private void sửaTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnSua_Click(this, new EventArgs());
+        }
+
+        private void hủyThaoTácToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnHuy_Click(this, new EventArgs());
+        }
     }
 }

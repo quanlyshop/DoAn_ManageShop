@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DAO;
 using DTO;
 using BUS;
+using System.Text.RegularExpressions;
 
 namespace GUI
 {
@@ -242,9 +243,11 @@ namespace GUI
                         return;
                     }
 
-                    if (sdt == "")
+                    Regex dt = new Regex(@"((09|03|07|08|05)+([0-9]{8})\b)");
+                    if (!dt.IsMatch(mtbSDT.Text))
                     {
-                        MessageBox.Show("Vui lòng điền 'sđt của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Số điện thoại sai định dạng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        mtbSDT.Focus();
                         return;
                     }
 
@@ -254,11 +257,15 @@ namespace GUI
                         MessageBox.Show("Vui lòng chọn giới tính của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if (email == "")
+
+                    Regex rg = new Regex(@"^([\w\.])+@([\w\.])+\.([\w]){2,3}$");
+                    if (!rg.IsMatch(txtEmail.Text))
                     {
-                        MessageBox.Show("Vui lòng điền email khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email sai định dạng!");
+                        txtEmail.Focus();
                         return;
                     }
+                    
                     if (sodiem == "")
                     {
                         MessageBox.Show("Vui lòng điền số điểm của khách hàng","Quản lý khách hàng",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -273,9 +280,9 @@ namespace GUI
                     DisableHuyButton();
                     EnableSuaButton();
                     EnableXoaButton();
-
-                    AddKhachHangBinding();
                     LoadKhachHang();
+                    AddKhachHangBinding();
+                    
                 }
                 catch (Exception ex)
                 {
@@ -327,9 +334,11 @@ namespace GUI
                     return;
                 }
 
-                if (sdt == "")
+                Regex dt = new Regex(@"((09|03|07|08|05)+([0-9]{8})\b)");
+                if (!dt.IsMatch(mtbSDT.Text))
                 {
-                    MessageBox.Show("Vui lòng điền 'sđt của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số điện thoại sai định dạng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
                     return;
                 }
 
@@ -339,9 +348,11 @@ namespace GUI
                     MessageBox.Show("Vui lòng chọn giới tính của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (email == "")
+                Regex rg = new Regex(@"^([\w\.])+@([\w\.])+\.([\w]){2,3}$");
+                if (!rg.IsMatch(txtEmail.Text))
                 {
-                    MessageBox.Show("Vui lòng điền email khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Email sai định dạng!", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
                     return;
                 }
                 if (sodiem == "")
@@ -361,22 +372,9 @@ namespace GUI
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult yes = MessageBox.Show("Bạn có chắc xóa thông tin?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (yes == DialogResult.Yes)
-                {
-                    string makh = txtMaKH.Text;
-                    DeleteKhachHang(makh);
-                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -465,6 +463,26 @@ namespace GUI
         {
             LoadKhachHang();
             AddKhachHangBinding();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string MaKH = txtMaKH.Text;
+                DeleteKhachHang(MaKH);
+                LoadKhachHang();
+                AddKhachHangBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void xuấtDanhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

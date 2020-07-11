@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
@@ -221,9 +222,11 @@ namespace GUI
                         return;
                     }
 
-                    if (SDT == "")
+                    Regex dt = new Regex(@"((09|03|07|08|05)+([0-9]{8})\b)");
+                    if (!dt.IsMatch(mtbSDT.Text))
                     {
-                        MessageBox.Show("Vui lòng điền 'sđt của nhân viên'", "Quản lý nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("Số điện thoại sai định dạng", "Quản lý Nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        mtbSDT.Focus();
                         return;
                     }
 
@@ -308,9 +311,11 @@ namespace GUI
                     return;
                 }
 
-                if (SDT == "")
+                Regex dt = new Regex(@"((09|03|07|08|05)+([0-9]{8})\b)");
+                if (!dt.IsMatch(mtbSDT.Text))
                 {
-                    MessageBox.Show("Vui lòng điền 'sđt của nhân viên'");
+                    MessageBox.Show("Số điện thoại sai định dạng", "Quản lý Nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    mtbSDT.Focus();
                     return;
                 }
 

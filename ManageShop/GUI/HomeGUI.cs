@@ -135,6 +135,11 @@ namespace GUI
 
         }
 
-     
+        private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LapHoaDonGUI f = new LapHoaDonGUI();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

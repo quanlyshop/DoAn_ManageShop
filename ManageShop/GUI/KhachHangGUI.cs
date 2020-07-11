@@ -243,7 +243,7 @@ namespace GUI
                         return;
                     }
 
-                    Regex dt = new Regex(@"((09|03|07|08|05)+([0-9]{8})\b)");
+                    Regex dt = new Regex(@"((09|03|07|08|05|02)+([0-9]{8})\b)");
                     if (!dt.IsMatch(mtbSDT.Text))
                     {
                         MessageBox.Show("Số điện thoại sai định dạng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -11,6 +11,7 @@ using DAO;
 using DTO;
 using BUS;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace GUI
 {
@@ -60,18 +61,17 @@ namespace GUI
             txtDonGia.DataSource = tb;
             txtDonGia.DisplayMember = "DonGiaBan";
         }
-        void TinhTong()
-        {
-            //float Tong = 0;
-            //float dongia = float.Parse(txtDonGia.Text);
-            //float soluong = float.Parse(txtSoLuong.Text);
-            //Tong = dongia * soluong;
-            //txtTong.Text = Tong.ToString();
-        }
+        //void TinhTong()
+        //{
+        //    //float Tong = 0;
+        //    //float dongia = float.Parse(txtDonGia.Text);
+        //    //float soluong = float.Parse(txtSoLuong.Text);
+        //    //Tong = dongia * soluong;
+        //    //txtTong.Text = Tong.ToString();
+        //}
         private void LapHoaDonGUI_Load(object sender, EventArgs e)
         {
             LayDuLieuSanPham();
-            TinhTong();
             DisableTextBox();
         }
         void AddHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia)
@@ -99,6 +99,7 @@ namespace GUI
             txtMaNV.Enabled = true;
             dtNgayLapHD.Enabled = true;
             txtDonGia.Enabled = true;
+            txtTongTien.Enabled = true;
         }
         public void DisableTextBox()
         {
@@ -108,6 +109,7 @@ namespace GUI
             txtMaNV.Enabled = false;
             dtNgayLapHD.Enabled = false;
             txtDonGia.Enabled = false;
+            txtTongTien.Enabled = false;
         }
         public void XoaTrang()
         {
@@ -116,6 +118,7 @@ namespace GUI
             txtSoLuong.Text = "";
             txtMaNV.Text = "";
             txtMaKH.Text = "";
+            txtTongTien.Text = "";
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -187,6 +190,23 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+    
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+           
+        }
 
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+            try
+            {
+                txtTongTien.Text = ((float.Parse(txtDonGia.Text)) * (float.Parse(txtSoLuong.Text))).ToString("c", culture);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

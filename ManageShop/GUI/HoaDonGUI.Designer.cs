@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearchHD = new System.Windows.Forms.Button();
+            this.txtSearchHD = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.ComboBox();
             this.cmbTenSP = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
@@ -50,8 +52,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtSearchHD = new System.Windows.Forms.TextBox();
-            this.btnSearchHD = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -87,6 +87,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN HÓA ĐƠN";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnSearchHD
+            // 
+            this.btnSearchHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchHD.Location = new System.Drawing.Point(316, 279);
+            this.btnSearchHD.Name = "btnSearchHD";
+            this.btnSearchHD.Size = new System.Drawing.Size(132, 51);
+            this.btnSearchHD.TabIndex = 10;
+            this.btnSearchHD.Text = "Tìm kiếm";
+            this.btnSearchHD.UseVisualStyleBackColor = true;
+            this.btnSearchHD.Click += new System.EventHandler(this.btnSearchHD_Click);
+            // 
+            // txtSearchHD
+            // 
+            this.txtSearchHD.Location = new System.Drawing.Point(470, 284);
+            this.txtSearchHD.Name = "txtSearchHD";
+            this.txtSearchHD.Size = new System.Drawing.Size(228, 40);
+            this.txtSearchHD.TabIndex = 9;
             // 
             // txtDonGia
             // 
@@ -272,7 +290,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 401);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1391, 251);
+            this.groupBox2.Size = new System.Drawing.Size(1391, 458);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DANH SÁCH HÓA ĐƠN";
@@ -283,32 +301,14 @@
             this.dgvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHoaDon.Location = new System.Drawing.Point(3, 36);
             this.dgvHoaDon.Name = "dgvHoaDon";
-            this.dgvHoaDon.Size = new System.Drawing.Size(1385, 212);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1385, 419);
             this.dgvHoaDon.TabIndex = 0;
-            // 
-            // txtSearchHD
-            // 
-            this.txtSearchHD.Location = new System.Drawing.Point(470, 284);
-            this.txtSearchHD.Name = "txtSearchHD";
-            this.txtSearchHD.Size = new System.Drawing.Size(228, 40);
-            this.txtSearchHD.TabIndex = 9;
-            // 
-            // btnSearchHD
-            // 
-            this.btnSearchHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchHD.Location = new System.Drawing.Point(316, 279);
-            this.btnSearchHD.Name = "btnSearchHD";
-            this.btnSearchHD.Size = new System.Drawing.Size(132, 51);
-            this.btnSearchHD.TabIndex = 10;
-            this.btnSearchHD.Text = "Tìm kiếm";
-            this.btnSearchHD.UseVisualStyleBackColor = true;
-            this.btnSearchHD.Click += new System.EventHandler(this.btnSearchHD_Click);
             // 
             // HoaDonGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1433, 664);
+            this.ClientSize = new System.Drawing.Size(1747, 871);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "HoaDonGUI";

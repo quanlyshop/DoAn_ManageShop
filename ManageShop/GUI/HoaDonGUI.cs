@@ -73,6 +73,9 @@ namespace GUI
             txtMaNV.Enabled = false;
             dtNgayLapHD.Enabled = false;
             txtDonGia.Enabled = false;
+
+            cmbTenSP.Enabled = true;
+            txtDonGia.Enabled = true;
         }
         public void DisableComboBox()
         {
@@ -90,6 +93,8 @@ namespace GUI
             txtMaNV.Enabled = true;
             dtNgayLapHD.Enabled = true;
             txtDonGia.Enabled = true;
+            cmbTenSP.Enabled = false;
+            txtDonGia.Enabled = false;
         }
         public void EnableTextBox2()
         {

@@ -28,7 +28,7 @@ namespace DAO
         }
         public bool UpdateKhachHang(string tenkh, string sdt, string gioitinh, string diachi, string sodiem, string namsinh, string email, string makh)
         {
-            string query = string.Format("update KhachHang set TenKH=N'{0}',SDT='{1}',GioiTinh=N'{2}',DiaChi='{3}',SoDiem='{4}',NamSinh='{5}',Email='{6}' where MaKH='{7}'", tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email, makh);
+            string query = string.Format("update KhachHang set TenKH=N'{0}',SDT='{1}',GioiTinh=N'{2}',DiaChi=N'{3}',SoDiem='{4}',NamSinh='{5}',Email='{6}' where MaKH='{7}'", tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email, makh);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

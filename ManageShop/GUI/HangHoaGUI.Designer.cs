@@ -70,7 +70,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 233);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1409, 285);
+            this.groupBox2.Size = new System.Drawing.Size(1409, 509);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DANH SÁCH SẢN PHẨM";
@@ -83,7 +83,7 @@
             this.dgvSanPham.Location = new System.Drawing.Point(3, 36);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowTemplate.Height = 28;
-            this.dgvSanPham.Size = new System.Drawing.Size(1403, 246);
+            this.dgvSanPham.Size = new System.Drawing.Size(1403, 470);
             this.dgvSanPham.TabIndex = 0;
             // 
             // groupBox1
@@ -301,9 +301,9 @@
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(0, 524);
+            this.groupBox3.Location = new System.Drawing.Point(0, 765);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1433, 104);
+            this.groupBox3.Size = new System.Drawing.Size(1737, 115);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "CHỨC NĂNG";
@@ -403,7 +403,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1433, 628);
+            this.ClientSize = new System.Drawing.Size(1737, 880);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);

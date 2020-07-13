@@ -20,15 +20,15 @@ namespace DAO
         {
             return DataProvider.Instance.ExecuteQuery("Select * form HoaDon");
         }
-        public bool InsertHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia)
+        public bool InsertHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia,string maSP)
         {
-            string query = string.Format("insert into HoaDon values('{0}','{1}','{2}','{3}',N'{4}','{5}','{6}')", maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia);
+            string query = string.Format("insert into HoaDon values('{0}','{1}','{2}','{3}',N'{4}','{5}','{6}','{7}')", maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool UpdateHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia, string maHD)
+        public bool UpdateHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia, string maSP, string maHD)
         {
-            string query = string.Format("update HoaDon set MaNV='{0}',MaKH='{1}',NgayBan='{2}',TongTien='{3}',TenSanPham='{4}',SoLuong='{5}',DonGia='{6}' where MaHD='{7}'", maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maHD);
+            string query = string.Format("update HoaDon set MaNV='{0}',MaKH='{1}',NgayBan='{2}',TongTien='{3}',TenSanPham=N'{4}',SoLuong='{5}',DonGia='{6}',MaSP='{7}' where MaHD='{8}'", maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP, maHD);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

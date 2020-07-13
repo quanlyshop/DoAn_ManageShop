@@ -47,6 +47,9 @@ namespace GUI
                 txtMaKH.DataBindings.Clear();
                 txtMaKH.DataBindings.Add(new Binding("Text", dgvHoaDon.DataSource, "MaKH"));
 
+                txtMaSP.DataBindings.Clear();
+                txtMaSP.DataBindings.Add(new Binding("Text", dgvHoaDon.DataSource, "MaSP"));
+
                 dtNgayLapHD.DataBindings.Clear();
                 dtNgayLapHD.DataBindings.Add(new Binding("Text", dgvHoaDon.DataSource, "NgayBan"));
 
@@ -73,9 +76,9 @@ namespace GUI
             txtMaNV.Enabled = false;
             dtNgayLapHD.Enabled = false;
             txtDonGia.Enabled = false;
-
-            cmbTenSP.Enabled = true;
-            txtDonGia.Enabled = true;
+            txtMaSP.Enabled = false;
+            cmbTenSP.Enabled = false;
+            txtDonGia.Enabled = false;
         }
         public void DisableComboBox()
         {
@@ -93,8 +96,9 @@ namespace GUI
             txtMaNV.Enabled = true;
             dtNgayLapHD.Enabled = true;
             txtDonGia.Enabled = true;
-            cmbTenSP.Enabled = false;
-            txtDonGia.Enabled = false;
+            cmbTenSP.Enabled = true;
+            txtDonGia.Enabled = true;
+            txtMaSP.Enabled = true;
         }
         public void EnableTextBox2()
         {
@@ -144,17 +148,19 @@ namespace GUI
         }
         public void XoaTrang()
         {
-            txtDonGia.Text = "";
             dtNgayLapHD.Text = "";
             txtSoLuong.Text = "";
             txtMaNV.Text = "";
             txtMaKH.Text = "";
+            txtMaSP.Text = "";
+            cmbTenSP.Text = "";
+            txtDonGia.Text = "";
         }
-        void AddHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia)
+        void AddHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia, string maSP)
         {
             try
             {
-                if (HoaDonDAO.Instance.InsertHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia))
+                if (HoaDonDAO.Instance.InsertHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP))
                 {
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
                     LoadHoaDon();
@@ -168,11 +174,11 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
-        void EditHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia, string maHD)
+        void EditHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia,string maSP, string maHD)
         {
             try
             {
-                if (HoaDonDAO.Instance.UpdateHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maHD))
+                if (HoaDonDAO.Instance.UpdateHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP, maHD))
                 {
                     MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK);
                 }
@@ -238,6 +244,7 @@ namespace GUI
                         string maKH = txtMaKH.Text;
                         string ngayBan = dtNgayLapHD.Text;
                         string tenSP = cmbTenSP.Text;
+                        string maSP = txtMaSP.Text;
                         float soLuong = float.Parse(txtSoLuong.Text);
                         float donGia = float.Parse(txtDonGia.Text);
                         float tongTien = donGia * soLuong;
@@ -259,6 +266,11 @@ namespace GUI
                             MessageBox.Show("Vui lòng điền 'ngày bán'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                             return;
                         }
+                        if (maSP == "")
+                        {
+                            MessageBox.Show("Vui lòng điền 'Mã sản phẩm'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            return;
+                        }
 
                         if (tenSP == "")
                         {
@@ -272,7 +284,7 @@ namespace GUI
                             return;
                         }
 
-                        AddHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia);
+                        AddHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP);
                         //load lại dữ liệu trên form
                         LoadHoaDon();
 
@@ -324,6 +336,7 @@ namespace GUI
                     string maKH = txtMaKH.Text;
                     string ngayBan = dtNgayLapHD.Text;
                     string tenSP = cmbTenSP.Text;
+                    string maSP = txtMaSP.Text;
                     float soLuong = float.Parse(txtSoLuong.Text);
                     float donGia = float.Parse(txtDonGia.Text);
                     float tongTien = (donGia * soLuong);
@@ -344,7 +357,11 @@ namespace GUI
                         MessageBox.Show("Vui lòng điền 'ngày bán'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         return;
                     }
-
+                    if (maSP == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'Mã sản phẩm'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
                     if (tenSP == "")
                     {
                         MessageBox.Show("Vui lòng điền 'sản phẩm'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -356,7 +373,7 @@ namespace GUI
                         MessageBox.Show("Vui lòng điền 'số lượng'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         return;
                     }
-                    EditHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maHD);
+                    EditHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP, maHD);
                     LoadHoaDon();
                     DisableTextBox();
                     DisableComboBox();
@@ -365,6 +382,7 @@ namespace GUI
                     DisableHuyButton();
                     EnableThemButton();
                     EnableXoaButton();
+                    AddHoaDonBinding();
                 }
             }
             catch(Exception ex)
@@ -420,7 +438,7 @@ namespace GUI
             string query = "SELECT *FROM SanPham";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter adap = new SqlDataAdapter(cmd);
-            
+
             DataTable tb = new DataTable();
             adap.Fill(tb);
 
@@ -429,6 +447,9 @@ namespace GUI
 
             txtDonGia.DataSource = tb;
             txtDonGia.DisplayMember = "DonGiaBan";
+
+            txtMaSP.DataSource = tb;
+            txtMaSP.DisplayMember = "MaSP";
         }
 
         private void HoaDonGUI_Load(object sender, EventArgs e)

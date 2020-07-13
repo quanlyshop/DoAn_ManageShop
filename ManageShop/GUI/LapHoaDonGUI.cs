@@ -60,6 +60,9 @@ namespace GUI
 
             txtDonGia.DataSource = tb;
             txtDonGia.DisplayMember = "DonGiaBan";
+
+            txtMaSP.DataSource = tb;
+            txtMaSP.DisplayMember = "MaSP";
         }
         //void TinhTong()
         //{
@@ -74,11 +77,11 @@ namespace GUI
             LayDuLieuSanPham();
             DisableTextBox();
         }
-        void AddHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia)
+        void AddHoaDon(string maNV, string maKH, string ngayBan, float tongTien, string tenSP, float soLuong, float donGia, string maSP)
         {
             try
             {
-                if (HoaDonDAO.Instance.InsertHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia))
+                if (HoaDonDAO.Instance.InsertHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP))
                 {
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
                     
@@ -100,6 +103,7 @@ namespace GUI
             dtNgayLapHD.Enabled = true;
             txtDonGia.Enabled = true;
             txtTongTien.Enabled = true;
+            txtMaSP.Enabled = true;
         }
         public void DisableTextBox()
         {
@@ -110,6 +114,7 @@ namespace GUI
             dtNgayLapHD.Enabled = false;
             txtDonGia.Enabled = false;
             txtTongTien.Enabled = false;
+            txtMaSP.Enabled = false;
         }
         public void XoaTrang()
         {
@@ -140,6 +145,7 @@ namespace GUI
                         string maKH = txtMaKH.Text;
                         string ngayBan = dtNgayLapHD.Text;
                         string tenSP = cmbTenSP.Text;
+                        string maSP = txtMaSP.Text;
                         float soLuong = float.Parse(txtSoLuong.Text);
                         float donGia = float.Parse(txtDonGia.Text);
                         float tongTien = donGia * soLuong;
@@ -167,14 +173,18 @@ namespace GUI
                             MessageBox.Show("Vui lòng điền 'sản phẩm'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                             return;
                         }
-
+                        if (maSP == "")
+                        {
+                            MessageBox.Show("Vui lòng điền 'Mã sản phẩm'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            return;
+                        }
                         if (soLuong.Equals(""))
                         {
                             MessageBox.Show("Vui lòng điền 'số lượng'", "Quản lý hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                             return;
                         }
 
-                        AddHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia);
+                        AddHoaDon(maNV, maKH, ngayBan, tongTien, tenSP, soLuong, donGia, maSP);
                         DisableTextBox();
                         btnThem.Text = "Thêm";
                     }
@@ -198,12 +208,17 @@ namespace GUI
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txtSoLuong_Leave(object sender, EventArgs e)
+        {
             CultureInfo culture = new CultureInfo("vi-VN");
             try
             {
                 txtTongTien.Text = ((float.Parse(txtDonGia.Text)) * (float.Parse(txtSoLuong.Text))).ToString("c", culture);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

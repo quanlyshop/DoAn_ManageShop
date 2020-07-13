@@ -80,6 +80,8 @@ Go
 Alter table HoaDon add TenSanPham nvarchar(100)
 alter table HoaDon add SoLuong int
 Alter table HoaDon add DonGia int
+alter table HoaDon add MaSP int
+Alter table HoaDon add constraint FK_SP foreign key(MaSP) references SanPham(MaSP)
 Go
 
 --Tạo bảng tài khoản
@@ -97,8 +99,8 @@ Alter table Account add chucvu nvarchar(50)
 Go
 
 --Thêm khóa ngoại cho bảng Account và NhanVien
-Alter table Account add constraint FK_Account foreign key(MaNV) references NhanVien(MaNV)
-Go
+--Alter table Account add constraint FK_Account foreign key(MaNV) references NhanVien(MaNV)
+--Go
 
 --Thêm tài khoản
 insert into Account values(N'Trần Văn Dương','admin','admin',N'Nhân viên')
@@ -282,3 +284,46 @@ go
 
 exec GetLishKhachHang
 go
+
+---Giảm số lượng khi lập hóa đơn
+create trigger trg_update_soLuong
+on HoaDon for insert
+as
+begin
+	declare @soluong int;
+	select @soluong=SanPham.SoLuong from SanPham ,Inserted where Inserted.MaSP=SanPham.MaSP
+	if @soluong < 1
+	begin
+		raiserror(N'Hết hàng',16,1)
+		rollback transaction
+	end
+	else
+	begin
+		update SanPham set SanPham.SoLuong = SanPham.SoLuong - 1 from Inserted , SanPham where Inserted.MaSP=SanPham.MaSP
+	end
+end
+go
+
+---Tăng số điểm của khách hàng sau khi mua hàng
+create trigger trg_update_Diem
+on HoaDon for insert
+as
+begin
+	declare @sodiem int;
+	declare @MaKH int;
+	select @MaKH=KhachHang.MaKH from KhachHang ,Inserted where Inserted.MaKH=KhachHang.MaKH
+	if @sodiem > 1000
+	begin
+		raiserror(N'Khách vip',16,1)
+		rollback transaction
+	end
+	else
+	begin
+		update KhachHang set KhachHang.SoDiem = KhachHang.SoDiem + 10 from Inserted , KhachHang where Inserted.MaKH=KhachHang.MaKH
+	end
+end
+go
+--drop trigger trg_update_Diem
+select*from KhachHang
+select*from HoaDon
+insert into HoaDon values('3','35','1-1-2020','400000','Áo thun','2','200000','1')

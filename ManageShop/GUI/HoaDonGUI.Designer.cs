@@ -52,6 +52,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMaSP = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -59,6 +61,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMaSP);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnSearchHD);
             this.groupBox1.Controls.Add(this.txtSearchHD);
             this.groupBox1.Controls.Add(this.txtDonGia);
@@ -110,7 +114,7 @@
             // 
             this.txtDonGia.Enabled = false;
             this.txtDonGia.FormattingEnabled = true;
-            this.txtDonGia.Location = new System.Drawing.Point(865, 94);
+            this.txtDonGia.Location = new System.Drawing.Point(861, 157);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(263, 41);
             this.txtDonGia.TabIndex = 7;
@@ -119,7 +123,7 @@
             // 
             this.cmbTenSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTenSP.FormattingEnabled = true;
-            this.cmbTenSP.Location = new System.Drawing.Point(865, 43);
+            this.cmbTenSP.Location = new System.Drawing.Point(861, 104);
             this.cmbTenSP.Name = "cmbTenSP";
             this.cmbTenSP.Size = new System.Drawing.Size(263, 35);
             this.cmbTenSP.TabIndex = 3;
@@ -176,15 +180,15 @@
             // 
             this.dtNgayLapHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayLapHD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayLapHD.Location = new System.Drawing.Point(243, 98);
+            this.dtNgayLapHD.Location = new System.Drawing.Point(861, 53);
             this.dtNgayLapHD.Name = "dtNgayLapHD";
-            this.dtNgayLapHD.Size = new System.Drawing.Size(205, 35);
+            this.dtNgayLapHD.Size = new System.Drawing.Size(263, 35);
             this.dtNgayLapHD.TabIndex = 2;
             // 
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(865, 155);
+            this.txtSoLuong.Location = new System.Drawing.Point(861, 213);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(263, 35);
             this.txtSoLuong.TabIndex = 4;
@@ -193,7 +197,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(686, 160);
+            this.label7.Location = new System.Drawing.Point(682, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 25);
             this.label7.TabIndex = 0;
@@ -203,7 +207,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(686, 103);
+            this.label6.Location = new System.Drawing.Point(682, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 25);
             this.label6.TabIndex = 0;
@@ -213,7 +217,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(686, 53);
+            this.label5.Location = new System.Drawing.Point(682, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(173, 25);
             this.label5.TabIndex = 0;
@@ -240,7 +244,7 @@
             // txtMaNV
             // 
             this.txtMaNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(242, 155);
+            this.txtMaNV.Location = new System.Drawing.Point(242, 160);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(206, 35);
             this.txtMaNV.TabIndex = 1;
@@ -249,7 +253,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 160);
+            this.label3.Location = new System.Drawing.Point(21, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 25);
             this.label3.TabIndex = 0;
@@ -259,7 +263,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 103);
+            this.label2.Location = new System.Drawing.Point(682, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 25);
             this.label2.TabIndex = 0;
@@ -269,7 +273,7 @@
             // 
             this.txtMaHD.Enabled = false;
             this.txtMaHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHD.Location = new System.Drawing.Point(242, 48);
+            this.txtMaHD.Location = new System.Drawing.Point(242, 53);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(206, 35);
             this.txtMaHD.TabIndex = 1;
@@ -278,7 +282,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 53);
+            this.label1.Location = new System.Drawing.Point(21, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 25);
             this.label1.TabIndex = 0;
@@ -303,6 +307,25 @@
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.Size = new System.Drawing.Size(1385, 419);
             this.dgvHoaDon.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(21, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(165, 25);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "MÃ SẢN PHẨM";
+            // 
+            // txtMaSP
+            // 
+            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSP.FormattingEnabled = true;
+            this.txtMaSP.Location = new System.Drawing.Point(242, 105);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(206, 33);
+            this.txtMaSP.TabIndex = 12;
             // 
             // HoaDonGUI
             // 
@@ -350,5 +373,7 @@
         private System.Windows.Forms.ComboBox txtDonGia;
         private System.Windows.Forms.Button btnSearchHD;
         private System.Windows.Forms.TextBox txtSearchHD;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox txtMaSP;
     }
 }

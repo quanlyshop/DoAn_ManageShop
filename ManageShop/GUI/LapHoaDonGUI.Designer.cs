@@ -37,6 +37,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -55,7 +56,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMaSP = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
@@ -73,7 +75,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1198, 584);
+            this.groupBox1.Size = new System.Drawing.Size(1198, 676);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DANH SÁCH SẢN PHẨM";
@@ -84,7 +86,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1192, 481);
+            this.panel2.Size = new System.Drawing.Size(1192, 573);
             this.panel2.TabIndex = 0;
             // 
             // dgvSanPham
@@ -94,7 +96,7 @@
             this.dgvSanPham.Location = new System.Drawing.Point(0, 0);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowTemplate.Height = 28;
-            this.dgvSanPham.Size = new System.Drawing.Size(1192, 481);
+            this.dgvSanPham.Size = new System.Drawing.Size(1192, 573);
             this.dgvSanPham.TabIndex = 0;
             // 
             // panel1
@@ -144,6 +146,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtMaSP);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtTongTien);
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.label8);
@@ -165,19 +169,26 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(1198, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(670, 584);
+            this.groupBox2.Size = new System.Drawing.Size(670, 676);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LẬP HÓA ĐƠN";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Location = new System.Drawing.Point(427, 480);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(205, 35);
+            this.txtTongTien.TabIndex = 20;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnThanhToan);
             this.panel3.Controls.Add(this.btnThem);
-            this.panel3.Location = new System.Drawing.Point(6, 472);
+            this.panel3.Location = new System.Drawing.Point(75, 551);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(720, 100);
+            this.panel3.Size = new System.Drawing.Size(557, 100);
             this.panel3.TabIndex = 19;
             // 
             // btnThanhToan
@@ -185,7 +196,7 @@
             this.btnThanhToan.BackColor = System.Drawing.SystemColors.Control;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.Location = new System.Drawing.Point(453, 25);
+            this.btnThanhToan.Location = new System.Drawing.Point(381, 26);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(132, 51);
             this.btnThanhToan.TabIndex = 22;
@@ -197,7 +208,7 @@
             this.btnThem.BackColor = System.Drawing.Color.Turquoise;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(204, 25);
+            this.btnThem.Location = new System.Drawing.Point(132, 26);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(132, 51);
             this.btnThem.TabIndex = 21;
@@ -209,7 +220,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(205, 430);
+            this.label8.Location = new System.Drawing.Point(205, 485);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 25);
             this.label8.TabIndex = 17;
@@ -219,7 +230,7 @@
             // 
             this.txtDonGia.Enabled = false;
             this.txtDonGia.FormattingEnabled = true;
-            this.txtDonGia.Location = new System.Drawing.Point(426, 316);
+            this.txtDonGia.Location = new System.Drawing.Point(426, 371);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(206, 36);
             this.txtDonGia.TabIndex = 16;
@@ -238,17 +249,17 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(426, 372);
+            this.txtSoLuong.Location = new System.Drawing.Point(426, 427);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(206, 35);
             this.txtSoLuong.TabIndex = 15;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
+            this.txtSoLuong.Leave += new System.EventHandler(this.txtSoLuong_Leave);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(205, 377);
+            this.label7.Location = new System.Drawing.Point(205, 432);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 25);
             this.label7.TabIndex = 11;
@@ -258,7 +269,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(205, 325);
+            this.label6.Location = new System.Drawing.Point(205, 380);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 25);
             this.label6.TabIndex = 12;
@@ -348,18 +359,30 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "MÃ HÓA ĐƠN";
             // 
-            // txtTongTien
+            // label9
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(427, 425);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(205, 35);
-            this.txtTongTien.TabIndex = 20;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(205, 327);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(165, 25);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "MÃ SẢN PHẨM";
+            // 
+            // txtMaSP
+            // 
+            this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSP.FormattingEnabled = true;
+            this.txtMaSP.Location = new System.Drawing.Point(426, 319);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(205, 33);
+            this.txtMaSP.TabIndex = 22;
             // 
             // LapHoaDonGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1868, 584);
+            this.ClientSize = new System.Drawing.Size(1868, 676);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "LapHoaDonGUI";
@@ -408,5 +431,7 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.ComboBox txtMaSP;
+        private System.Windows.Forms.Label label9;
     }
 }

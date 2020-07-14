@@ -223,5 +223,25 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnThem.Text.Equals("Lưu"))
+                {
+                    btnThem.Text = "Thêm";
+                }
+                
+                DisableTextBox();
+                XoaTrang();
+                LoadSanPham();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
     }
 }

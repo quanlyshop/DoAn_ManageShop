@@ -51,7 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.txtSearchSP = new System.Windows.Forms.TextBox();
             this.btnSearchSP = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -68,7 +67,7 @@
             // 
             this.groupBox2.Controls.Add(this.dgvSanPham);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 233);
+            this.groupBox2.Location = new System.Drawing.Point(12, 387);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1409, 509);
             this.groupBox2.TabIndex = 5;
@@ -135,7 +134,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 156);
+            this.label5.Location = new System.Drawing.Point(18, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 25);
             this.label5.TabIndex = 5;
@@ -171,7 +170,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(444, 100);
+            this.label8.Location = new System.Drawing.Point(431, 100);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 25);
             this.label8.TabIndex = 0;
@@ -180,7 +179,7 @@
             // mtbSoLuong
             // 
             this.mtbSoLuong.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbSoLuong.Location = new System.Drawing.Point(623, 148);
+            this.mtbSoLuong.Location = new System.Drawing.Point(623, 152);
             this.mtbSoLuong.Name = "mtbSoLuong";
             this.mtbSoLuong.Size = new System.Drawing.Size(83, 33);
             this.mtbSoLuong.TabIndex = 4;
@@ -189,7 +188,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(444, 47);
+            this.label3.Location = new System.Drawing.Point(431, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 25);
             this.label3.TabIndex = 0;
@@ -199,7 +198,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(811, 104);
+            this.label9.Location = new System.Drawing.Point(811, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 25);
             this.label9.TabIndex = 0;
@@ -219,7 +218,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(949, 51);
+            this.label6.Location = new System.Drawing.Point(932, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 25);
             this.label6.TabIndex = 0;
@@ -229,7 +228,7 @@
             // 
             this.lb.AutoSize = true;
             this.lb.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb.Location = new System.Drawing.Point(444, 156);
+            this.lb.Location = new System.Drawing.Point(431, 156);
             this.lb.Name = "lb";
             this.lb.Size = new System.Drawing.Size(123, 25);
             this.lb.TabIndex = 0;
@@ -247,7 +246,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(949, 104);
+            this.label4.Location = new System.Drawing.Point(932, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 25);
             this.label4.TabIndex = 0;
@@ -256,7 +255,7 @@
             // txtTenSP
             // 
             this.txtTenSP.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSP.Location = new System.Drawing.Point(234, 100);
+            this.txtTenSP.Location = new System.Drawing.Point(234, 96);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(137, 33);
             this.txtTenSP.TabIndex = 1;
@@ -265,7 +264,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 104);
+            this.label2.Location = new System.Drawing.Point(18, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 25);
             this.label2.TabIndex = 0;
@@ -275,7 +274,7 @@
             // 
             this.txtMaSP.Enabled = false;
             this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSP.Location = new System.Drawing.Point(234, 47);
+            this.txtMaSP.Location = new System.Drawing.Point(234, 43);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(63, 33);
             this.txtMaSP.TabIndex = 1;
@@ -284,7 +283,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 51);
+            this.label1.Location = new System.Drawing.Point(18, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 25);
             this.label1.TabIndex = 0;
@@ -292,39 +291,23 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnPrint);
             this.groupBox3.Controls.Add(this.txtSearchSP);
             this.groupBox3.Controls.Add(this.btnSearchSP);
             this.groupBox3.Controls.Add(this.btnHuy);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(0, 765);
+            this.groupBox3.Location = new System.Drawing.Point(12, 250);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1737, 115);
-            this.groupBox3.TabIndex = 4;
+            this.groupBox3.Size = new System.Drawing.Size(1696, 115);
+            this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "CHỨC NĂNG";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrint.BackgroundImage = global::GUI.Properties.Resources.Printer_icon;
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(1328, 32);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(62, 62);
-            this.btnPrint.TabIndex = 14;
-            this.btnPrint.UseVisualStyleBackColor = false;
             // 
             // txtSearchSP
             // 
-            this.txtSearchSP.Location = new System.Drawing.Point(1078, 45);
+            this.txtSearchSP.Location = new System.Drawing.Point(949, 45);
             this.txtSearchSP.Name = "txtSearchSP";
             this.txtSearchSP.Size = new System.Drawing.Size(226, 40);
             this.txtSearchSP.TabIndex = 12;
@@ -333,25 +316,26 @@
             // 
             this.btnSearchSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchSP.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchSP.Location = new System.Drawing.Point(925, 30);
+            this.btnSearchSP.Image = global::GUI.Properties.Resources.Very_Basic_Search_icon;
+            this.btnSearchSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchSP.Location = new System.Drawing.Point(1195, 33);
             this.btnSearchSP.Name = "btnSearchSP";
-            this.btnSearchSP.Size = new System.Drawing.Size(135, 62);
+            this.btnSearchSP.Size = new System.Drawing.Size(163, 62);
             this.btnSearchSP.TabIndex = 13;
             this.btnSearchSP.Text = "Tìm kiếm";
+            this.btnSearchSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearchSP.UseVisualStyleBackColor = true;
-            this.btnSearchSP.Click += new System.EventHandler(this.btnSearchSP_Click);
             // 
             // btnHuy
             // 
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(656, 33);
+            this.btnHuy.Location = new System.Drawing.Point(698, 33);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(125, 62);
+            this.btnHuy.Size = new System.Drawing.Size(153, 62);
             this.btnHuy.TabIndex = 11;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnXoa
             // 
@@ -359,14 +343,13 @@
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::GUI.Properties.Resources.Close_2_icon;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(514, 33);
+            this.btnXoa.Location = new System.Drawing.Point(520, 33);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(125, 62);
+            this.btnXoa.Size = new System.Drawing.Size(153, 62);
             this.btnXoa.TabIndex = 10;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -374,14 +357,13 @@
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::GUI.Properties.Resources.Fix_icon;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(372, 33);
+            this.btnSua.Location = new System.Drawing.Point(345, 33);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(125, 62);
+            this.btnSua.Size = new System.Drawing.Size(153, 62);
             this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -390,23 +372,22 @@
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::GUI.Properties.Resources.Actions_list_add_user_icon;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(230, 33);
+            this.btnThem.Location = new System.Drawing.Point(170, 33);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(125, 62);
+            this.btnThem.Size = new System.Drawing.Size(153, 62);
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // HangHoaGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1737, 880);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
             this.Name = "HangHoaGUI";
             this.Text = "HangHoaGUI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -436,21 +417,20 @@
         private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.MaskedTextBox mtbDonGiaBan;
         private System.Windows.Forms.MaskedTextBox mtbDonGiaGoc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbSize;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtSearchSP;
+        private System.Windows.Forms.Button btnSearchSP;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.ComboBox cmbSize;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtSearchSP;
-        private System.Windows.Forms.Button btnSearchSP;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnPrint;
     }
 }

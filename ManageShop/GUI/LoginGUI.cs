@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DTO;
 
 namespace GUI
 {
@@ -17,7 +18,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+      
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -42,23 +43,30 @@ namespace GUI
         {
             return AccountDAO.Instance.Login(usename, pass, fullname, chucvu);
         }
-        public delegate void CheckpPermission(int per);
-        CheckpPermission chk;
-        HomeGUI frm;
+        bool PhanQuyen(string chucvu)
+        {
+            return AccountDAO.Instance.PhanQuyen(chucvu);
+        }
+
+        //public delegate void CheckpPermission(int per);
+        //CheckpPermission chk;
+        //HomeGUI frm;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string usename = txtUsename.Text;
             string pass = txtPass.Text;
             string fullname = lbFullname.Text;
-            string chucvu = lbChucvu.Text;
-            
+            string chucvu = "";
             if (Login(usename, pass, fullname, chucvu))
             {
-                //MessageBox.Show("Xin chào '" + chucvu + "'", "Camper-Store", MessageBoxButtons.OK);
-                HomeGUI f = new HomeGUI();
+                MessageBox.Show("Xin chào '" + usename + "'", "Camper-Store", MessageBoxButtons.OK);
+                AccountDTO loginAccount = AccountDAO.Instance.GetAccountByUserName(usename);
+                HomeGUI f = new HomeGUI(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
+                txtUsename.Text = "";
+                txtPass.Text = "";
             }
             else
             {

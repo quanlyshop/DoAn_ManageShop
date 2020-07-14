@@ -52,7 +52,7 @@
             this.checkBox1.Location = new System.Drawing.Point(123, 334);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(150, 23);
-            this.checkBox1.TabIndex = 7;
+            this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Hiển thị mặt khẩu";
             this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -61,18 +61,20 @@
             // 
             this.txtPass.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(123, 301);
+            this.txtPass.MaxLength = 50;
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(309, 37);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.TabIndex = 1;
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtUsename
             // 
             this.txtUsename.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsename.Location = new System.Drawing.Point(123, 252);
+            this.txtUsename.MaxLength = 50;
             this.txtUsename.Name = "txtUsename";
             this.txtUsename.Size = new System.Drawing.Size(309, 37);
-            this.txtUsename.TabIndex = 1;
+            this.txtUsename.TabIndex = 0;
             // 
             // btnLogin
             // 

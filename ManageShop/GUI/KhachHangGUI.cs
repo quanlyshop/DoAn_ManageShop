@@ -482,7 +482,7 @@ namespace GUI
 
         private void xuấtDanhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

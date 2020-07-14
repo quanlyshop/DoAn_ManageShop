@@ -18,15 +18,8 @@ namespace GUI
     public partial class NhanVienGUI : Form
     {
         private string chucvu;
-        
-        //NhanVienBUS nvBUS = new NhanVienBUS();
-        NhanVienDTO nvDTO = new NhanVienDTO();
-
         public string Chucvu { get => chucvu; set => chucvu = value; }
 
-        //NhanVienDAO nvDAO = new NhanVienDAO();
-        //tạo một cái cờ
-        //int flag = 0;
         public NhanVienGUI()
         {
             InitializeComponent();
@@ -77,15 +70,6 @@ namespace GUI
             DisableHuyButton();
             string query = "select * from NhanVien ";
             dgvNhanVien.DataSource = DataProvider.Instance.ExecuteQuery(query);
-        }
-        void loadcontrol(bool e)
-        {
-            //txtTenNV.Enabled = e;
-            //cmbGioiTinh.Enabled = e;
-            //txtDiaChi.Enabled = e;
-            //mtbSDT.Enabled = e;
-            //dtNamSinh.Enabled = e;
-            //cbChucVu.Enabled = e;
         }
         public void DisableTextBox()
         {
@@ -180,7 +164,7 @@ namespace GUI
         //    nvDTO.Namsinh = dtNamSinh.Text.Trim();
         //    nvDTO.Chucvu = cbChucVu.Text.Trim();
         //}
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             if (btnThem.Text.Equals("Thêm"))
             {
@@ -268,7 +252,7 @@ namespace GUI
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
             if (btnSua.Text.Equals("Sửa"))
             {
@@ -338,6 +322,7 @@ namespace GUI
 
                 EditNhanVien(TenNhanVien, GioiTinh, DiaChi, SDT, NamSinh, chucvu, LuongCoBan, MaNV);
                 LoadNhanVien();
+                AddNhanVienBinding();
                 DisableTextBox();
                 DisableComboBox();
                 btnSua.Text = "Sửa";
@@ -347,25 +332,21 @@ namespace GUI
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
             try
             {
-                DialogResult yes = MessageBox.Show("Bạn có chắc xóa thông tin?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (yes == DialogResult.Yes)
-                {
-                    string MaNV = txtMaNV.Text;
-                    DeleteNhanVien(MaNV);
-                    LoadNhanVien();
-                }
+                string MaNV = txtMaNV.Text;
+                DeleteNhanVien(MaNV);
+                LoadNhanVien();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
         
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void btnHuy_Click_1(object sender, EventArgs e)
         {
             try
             {

@@ -178,8 +178,7 @@
             this.cbchucvu.FormattingEnabled = true;
             this.cbchucvu.Items.AddRange(new object[] {
             "Thu ngân",
-            "Bảo vệ",
-            "Nhân viên"});
+            "admin"});
             this.cbchucvu.Location = new System.Drawing.Point(203, 258);
             this.cbchucvu.Name = "cbchucvu";
             this.cbchucvu.Size = new System.Drawing.Size(173, 35);

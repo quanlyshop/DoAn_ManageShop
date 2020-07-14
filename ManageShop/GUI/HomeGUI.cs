@@ -7,21 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DAO;
+using DTO;
 
 namespace GUI
 {
     public partial class HomeGUI : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public HomeGUI()
+        private AccountDTO loginAccount;
+        
+        public AccountDTO LoginAccount
         {
-            InitializeComponent();
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(loginAccount.Id); }
         }
-        private string chucvu;
-        private string fullname;
 
-        public string Fullname { get => fullname; set => fullname = value; }
-        public string Chucvu { get => chucvu; set => chucvu = value; }
-
+        public HomeGUI(AccountDTO acc)
+        {
+            this.loginAccount = acc;//this.LoginAccount = acc;
+            InitializeComponent();
+           
+        }
+        void ChangeAccount(int Id)
+        {
+            //btnNhanVien.Enabled = id == 19;
+            if (Id == 19)
+            {
+                btnNhanVien.Enabled = true;
+                btnAccount.Enabled = true;
+            }
+            else
+            {
+                btnNhanVien.Enabled = false;
+                btnAccount.Enabled = false;
+            }
+        }
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.KiemTraTonTai(typeof(NhanVienGUI));
@@ -36,7 +56,6 @@ namespace GUI
                 f.MdiParent = this;
                 f.Show();
             }
-            
         }
         public void DisEndMenu(bool e)
         {
@@ -61,14 +80,12 @@ namespace GUI
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             KhachHangGUI f = new KhachHangGUI();
-            //IsMdiContainer = true;
             f.MdiParent = this;
             f.Show();
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //IsMdiContainer = true;
             RegisterGUI f = new RegisterGUI();
             f.MdiParent = this;
             f.Show();
@@ -76,7 +93,6 @@ namespace GUI
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //IsMdiContainer = true;
             HangHoaGUI f = new HangHoaGUI();
             f.MdiParent = this;
             f.Show();
@@ -91,14 +107,16 @@ namespace GUI
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //IsMdiContainer = true;
-            LoginGUI f = new LoginGUI();
-            f.Show();
+            //LoginGUI f = new LoginGUI();
+            //this.Hide();
+            //f.ShowDialog();
+            this.Close();
         }
 
         private void HomeGUI_Load(object sender, EventArgs e)
         {
-
+            RegisterGUI f = new RegisterGUI();
+            f.loginAccount = LoginAccount;
         }
         private Form KiemTraTonTai(Type ftype)
         {
@@ -115,8 +133,8 @@ namespace GUI
         private void HomeGUI_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dr;
-            dr = XtraMessageBox.Show("Bạn có muốn thoát ?", "Camper-Store", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(dr==DialogResult.No)
+            dr = XtraMessageBox.Show("Bạn có muốn thoát chương trình ?", "Camper-Store", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
             {
                 e.Cancel = true;
             }
@@ -124,7 +142,6 @@ namespace GUI
 
         private void btnHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //IsMdiContainer = true;
             HoaDonGUI f = new HoaDonGUI();
             f.MdiParent = this;
             f.Show();

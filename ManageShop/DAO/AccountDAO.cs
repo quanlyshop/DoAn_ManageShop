@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAO
 {
@@ -19,6 +20,12 @@ namespace DAO
         public bool Login(string usename,string pass,string fullname, string chucvu)
         {
             string query = "select *from Account a where a.usename = N'" + usename + "' and a.pass = N'" + pass + "'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result.Rows.Count > 0;
+        }
+        public bool PhanQuyen(string chucvu)
+        {
+            string query = "select chucvu from Account ";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }
@@ -43,6 +50,15 @@ namespace DAO
             string query = string.Format("delete Account where id='{0}'", id);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
+        }
+        public AccountDTO GetAccountByUserName(string usename)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from Account where usename = N'" + usename + "'");
+            foreach(DataRow item in data.Rows )
+            {
+                return new AccountDTO(item);
+            }
+            return null;
         }
     }
 }

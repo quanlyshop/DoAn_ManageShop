@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DTO;
 
 namespace GUI
 {
     public partial class RegisterGUI : Form
     {
+        public AccountDTO loginAccount;
         public RegisterGUI()
         {
             InitializeComponent();
@@ -93,6 +95,11 @@ namespace GUI
         {
             try
             {
+                //if (loginAccount.Usename.Equals(usename))
+                //{
+                //    MessageBox.Show("Đừng tự xóa mình chứ !", "Thông báo");
+                //    return;
+                //}
                 if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa thông tin ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     if (AccountDAO.Instance.DeleteAccount(id))
@@ -116,12 +123,14 @@ namespace GUI
             string pass = txtpass.Text;
             string chucvu = cbchucvu.Text;
             AddAccount(fullname, usename, pass, chucvu);
+            AddAcountBinding();
         }
         
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string id = txtid.Text;
             DeleteAccount(id);
+            LoadAccount();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -132,6 +141,7 @@ namespace GUI
             string chucvu = cbchucvu.Text;
             string id = txtid.Text;
             EditAccount(fullname, usename, pass, chucvu, id);
+            AddAcountBinding();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

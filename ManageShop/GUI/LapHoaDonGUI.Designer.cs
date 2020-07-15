@@ -37,10 +37,13 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtNgayLapHD = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,9 +59,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtNgayLapHD = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
@@ -176,6 +176,25 @@
             this.groupBox2.Text = "LẬP HÓA ĐƠN";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // dtNgayLapHD
+            // 
+            this.dtNgayLapHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgayLapHD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayLapHD.Location = new System.Drawing.Point(426, 256);
+            this.dtNgayLapHD.Name = "dtNgayLapHD";
+            this.dtNgayLapHD.Size = new System.Drawing.Size(205, 35);
+            this.dtNgayLapHD.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(175, 261);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 25);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "NGÀY LẬP HĐ";
+            // 
             // txtMaSP
             // 
             this.txtMaSP.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,16 +231,32 @@
             this.panel3.Size = new System.Drawing.Size(557, 100);
             this.panel3.TabIndex = 19;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(193, 26);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(132, 51);
+            this.btnHuy.TabIndex = 25;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // btnThanhToan
             // 
             this.btnThanhToan.BackColor = System.Drawing.SystemColors.Control;
+            this.btnThanhToan.BackgroundImage = global::GUI.Properties.Resources.Printer_icon;
+            this.btnThanhToan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThanhToan.Location = new System.Drawing.Point(381, 26);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(132, 51);
             this.btnThanhToan.TabIndex = 22;
-            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.Text = "In";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThanhToan.UseVisualStyleBackColor = false;
             // 
             // btnThem
@@ -360,37 +395,6 @@
             this.label1.Size = new System.Drawing.Size(153, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "MÃ HÓA ĐƠN";
-            // 
-            // dtNgayLapHD
-            // 
-            this.dtNgayLapHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtNgayLapHD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayLapHD.Location = new System.Drawing.Point(426, 256);
-            this.dtNgayLapHD.Name = "dtNgayLapHD";
-            this.dtNgayLapHD.Size = new System.Drawing.Size(205, 35);
-            this.dtNgayLapHD.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(175, 261);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 25);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "NGÀY LẬP HĐ";
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(193, 26);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(132, 51);
-            this.btnHuy.TabIndex = 25;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // LapHoaDonGUI
             // 

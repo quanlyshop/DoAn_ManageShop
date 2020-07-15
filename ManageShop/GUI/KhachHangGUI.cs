@@ -11,6 +11,8 @@ using DAO;
 using DTO;
 using BUS;
 using System.Text.RegularExpressions;
+using DevExpress.XtraReports.UI;
+using System.Data.SqlClient;
 
 namespace GUI
 {
@@ -482,7 +484,8 @@ namespace GUI
 
         private void xuấtDanhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            XtraReport1 report = new XtraReport1();
+            report.ShowPreviewDialog();
         }
     }
 }

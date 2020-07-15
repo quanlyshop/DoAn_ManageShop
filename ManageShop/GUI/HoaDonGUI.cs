@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BUS;
 using DAO;
 using DTO;
+using System.Data.SqlClient;
 
 namespace GUI
 {
@@ -469,6 +470,17 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void inHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetListHoaDon report = new GetListHoaDon();
+            //report.ShowPreviewDialog();
+        }
+
+        private void txtSearchHD_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

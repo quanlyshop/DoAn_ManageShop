@@ -54,8 +54,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnXem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -283,15 +283,15 @@
             this.quảnLýKháchHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xuấtDanhSáchKháchHàngToolStripMenuItem});
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(181, 29);
-            this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý khách hàng";
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.quảnLýKháchHàngToolStripMenuItem.Text = "Phím tắt";
             // 
             // xuấtDanhSáchKháchHàngToolStripMenuItem
             // 
             this.xuấtDanhSáchKháchHàngToolStripMenuItem.Name = "xuấtDanhSáchKháchHàngToolStripMenuItem";
             this.xuấtDanhSáchKháchHàngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.xuấtDanhSáchKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(374, 30);
-            this.xuấtDanhSáchKháchHàngToolStripMenuItem.Text = "Xuất danh sách khách hàng";
+            this.xuấtDanhSáchKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(367, 30);
+            this.xuấtDanhSáchKháchHàngToolStripMenuItem.Text = "Xuất thông tin khách hàng";
             this.xuấtDanhSáchKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.xuấtDanhSáchKháchHàngToolStripMenuItem_Click);
             // 
             // groupBox3
@@ -333,6 +333,13 @@
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(815, 49);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(184, 40);
+            this.txtSearch.TabIndex = 0;
+            // 
             // btnSearch
             // 
             this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
@@ -347,13 +354,6 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(815, 49);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(184, 40);
-            this.txtSearch.TabIndex = 0;
             // 
             // btnXoa
             // 

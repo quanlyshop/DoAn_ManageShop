@@ -50,5 +50,17 @@ namespace DAO
                 throw e;
             }
         }
+        public DataTable ReportHoaDon(int id)
+        {
+            try
+            {
+                string query = string.Format("select * form HoaDon where MaHD = '" + id + "'");
+                return DataProvider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

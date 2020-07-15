@@ -28,5 +28,16 @@ namespace BUS
                 throw ex;
             }
         }
+        public DataTable ReporHoaDon(int id)
+        {
+            try
+            {
+                return HoaDonDAO.Instance.ReportHoaDon(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

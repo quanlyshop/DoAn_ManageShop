@@ -15,7 +15,6 @@ namespace GUI
     public partial class HomeGUI : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private AccountDTO loginAccount;
-        
         public AccountDTO LoginAccount
         {
             get { return loginAccount; }
@@ -26,7 +25,6 @@ namespace GUI
         {
             this.loginAccount = acc;//this.LoginAccount = acc;
             InitializeComponent();
-           
         }
         void ChangeAccount(int Id)
         {

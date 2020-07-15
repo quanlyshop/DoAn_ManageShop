@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BUS;
 using DAO;
 using DTO;
+using DevExpress.XtraReports.UI;
+using System.Data.SqlClient;
 
 namespace GUI
 {
@@ -452,6 +454,12 @@ namespace GUI
                 btnXoa.Enabled = false;
                 
             }
+        }
+
+        private void xuấtDanhSáchSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachSanPham report = new DanhSachSanPham();
+            report.ShowPreviewDialog();
         }
     }
 }

@@ -262,6 +262,16 @@ go
 exec GetHoaDon '7'
 go
 
+--- Lấy danh sách hóa đơn
+create proc GetListHoaDon
+as
+begin
+	select *from HoaDon
+end
+go
+exec GetListHoaDon
+go
+
 ---Lấy danh sách sản phẩm
 create proc GetListSanPham
 as

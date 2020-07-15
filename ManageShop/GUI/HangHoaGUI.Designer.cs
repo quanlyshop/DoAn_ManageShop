@@ -52,8 +52,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtSearchSP = new System.Windows.Forms.TextBox();
-            this.btnSearchSP = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.phímTắtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xuấtDanhSáchSảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSearchSP = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -61,15 +64,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvSanPham);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 387);
+            this.groupBox2.Location = new System.Drawing.Point(12, 475);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1409, 509);
+            this.groupBox2.Size = new System.Drawing.Size(1409, 421);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DANH SÁCH SẢN PHẨM";
@@ -82,7 +86,7 @@
             this.dgvSanPham.Location = new System.Drawing.Point(3, 36);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowTemplate.Height = 28;
-            this.dgvSanPham.Size = new System.Drawing.Size(1403, 470);
+            this.dgvSanPham.Size = new System.Drawing.Size(1403, 382);
             this.dgvSanPham.TabIndex = 0;
             // 
             // groupBox1
@@ -106,7 +110,7 @@
             this.groupBox1.Controls.Add(this.txtMaSP);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 77);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1409, 215);
             this.groupBox1.TabIndex = 6;
@@ -298,7 +302,7 @@
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 250);
+            this.groupBox3.Location = new System.Drawing.Point(12, 321);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1696, 115);
             this.groupBox3.TabIndex = 7;
@@ -311,6 +315,43 @@
             this.txtSearchSP.Name = "txtSearchSP";
             this.txtSearchSP.Size = new System.Drawing.Size(226, 40);
             this.txtSearchSP.TabIndex = 12;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(698, 33);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(153, 62);
+            this.btnHuy.TabIndex = 11;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.phímTắtToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1737, 33);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // phímTắtToolStripMenuItem
+            // 
+            this.phímTắtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xuấtDanhSáchSảnPhẩmToolStripMenuItem});
+            this.phímTắtToolStripMenuItem.Name = "phímTắtToolStripMenuItem";
+            this.phímTắtToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.phímTắtToolStripMenuItem.Text = "Phím tắt";
+            // 
+            // xuấtDanhSáchSảnPhẩmToolStripMenuItem
+            // 
+            this.xuấtDanhSáchSảnPhẩmToolStripMenuItem.Name = "xuấtDanhSáchSảnPhẩmToolStripMenuItem";
+            this.xuấtDanhSáchSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(300, 30);
+            this.xuấtDanhSáchSảnPhẩmToolStripMenuItem.Text = "Xuất danh sách sản phẩm";
+            this.xuấtDanhSáchSảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.xuấtDanhSáchSảnPhẩmToolStripMenuItem_Click);
             // 
             // btnSearchSP
             // 
@@ -325,17 +366,6 @@
             this.btnSearchSP.Text = "Tìm kiếm";
             this.btnSearchSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearchSP.UseVisualStyleBackColor = true;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(698, 33);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(153, 62);
-            this.btnHuy.TabIndex = 11;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
@@ -388,6 +418,8 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "HangHoaGUI";
             this.Text = "HangHoaGUI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -398,7 +430,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -432,5 +467,8 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem phímTắtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xuấtDanhSáchSảnPhẩmToolStripMenuItem;
     }
 }

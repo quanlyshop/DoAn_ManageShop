@@ -62,5 +62,10 @@ namespace DAO
                 throw e;
             }
         }
+        public DataTable GetHoaDonByMaHD(int maHD)
+        {
+            string query = string.Format("GetHoaDon '" + maHD + "'");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

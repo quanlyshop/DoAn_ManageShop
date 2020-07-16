@@ -258,6 +258,7 @@
             this.btnThanhToan.Text = "In";
             this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnThem
             // 

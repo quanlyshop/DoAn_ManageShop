@@ -115,6 +115,7 @@ namespace GUI
             txtDonGia.Enabled = false;
             txtTongTien.Enabled = false;
             txtMaSP.Enabled = false;
+            cmbTenSP.Enabled = false;
         }
         public void XoaTrang()
         {
@@ -124,6 +125,7 @@ namespace GUI
             txtMaNV.Text = "";
             txtMaKH.Text = "";
             txtTongTien.Text = "";
+            
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -241,6 +243,11 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
+            
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
             
         }
     }

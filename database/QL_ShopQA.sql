@@ -190,19 +190,6 @@ as
 	end
 go
 
----Cập nhật số lượng hàng hóa khi tạo hóa đơn
---create trigger trg_SoLuong on SanPham
---after insert,update,delete
---as
---begin transaction
---	declare @MaHD int
---	declare @SoLuong int
---	if exists (select *from inserted)
---			select @MaHD=
-
-
---go
-
 --- Trigger ràng buộc đơn giá phải lớn hơn giá gốc
 create trigger trg_DonGia on SanPham
 after insert,update
@@ -250,16 +237,16 @@ exec Search_HoaDon N'7'
 go
 
 ---Get HoaDon
-create proc GetHoaDon(@MaHD int)
+create proc proc_GetHoaDon(@MaHD int)
 as
 begin
-	select hd.MaHD,nv.TenNhanVien, hd.TenSanPham,hd.DonGia,hd.SoLuong,hd.TongTien,hd.NgayBan 
-	from HoaDon hd, NhanVien nv
-	where @MaHD=hd.MaHD and hd.MaNV=nv.MaNV
+	select *
+	from HoaDon
+	where @MaHD=MaHD
 end
 go
 
-exec GetHoaDon '7'
+exec proc_GetHoaDon '7'
 go
 
 --- Lấy danh sách hóa đơn

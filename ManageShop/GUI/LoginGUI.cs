@@ -61,7 +61,7 @@ namespace GUI
             {
                 MessageBox.Show("Xin chào '" + usename + "'", "Camper-Store", MessageBoxButtons.OK);
                 AccountDTO loginAccount = AccountDAO.Instance.GetAccountByUserName(usename);
-                HomeGUI f = new HomeGUI(loginAccount);
+                HomeGUI f = new HomeGUI();
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

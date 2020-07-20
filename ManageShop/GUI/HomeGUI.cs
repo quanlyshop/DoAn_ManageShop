@@ -21,9 +21,9 @@ namespace GUI
             set { loginAccount = value; ChangeAccount(loginAccount.Id); }
         }
 
-        public HomeGUI(AccountDTO acc)
+        public HomeGUI()
         {
-            this.loginAccount = acc;//this.LoginAccount = acc;
+            //this.loginAccount = acc;//this.LoginAccount = acc;
             InitializeComponent();
         }
         void ChangeAccount(int Id)

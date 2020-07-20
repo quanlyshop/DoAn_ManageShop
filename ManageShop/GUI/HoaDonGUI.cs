@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using BUS;
 using DAO;
 using DTO;
-using System.Data.SqlClient;
 
 namespace GUI
 {

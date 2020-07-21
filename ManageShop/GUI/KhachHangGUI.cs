@@ -419,7 +419,6 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void KhachHangGUI_Load(object sender, EventArgs e)
@@ -486,6 +485,241 @@ namespace GUI
         {
             XtraReport1 report = new XtraReport1();
             report.ShowPreviewDialog();
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            if (btnThem.Text.Equals("Thêm"))
+            {
+                EnableTextBox();
+                XoaTrang();
+                btnThem.Text = "Lưu";
+
+                EnableHuyButton();
+                DisableSuaButton();
+                DisableXoaButton();
+
+            }
+
+            else if (btnThem.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    string tenkh = txtTenKH.Text;
+                    string sdt = mtbSDT.Text;
+                    string gioitinh = cmbGioiTinh.Text;
+                    string diachi = txtDiaChi.Text;
+                    string sodiem = mtbSoDiem.Text;
+                    string namsinh = dtNamSinh.Text;
+                    string email = txtEmail.Text;
+                    if (tenkh == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'tên khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (namsinh == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'năm sinh khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (diachi == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'địa chi của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    Regex dt = new Regex(@"((09|03|07|08|05|02)+([0-9]{8})\b)");
+                    if (!dt.IsMatch(mtbSDT.Text))
+                    {
+                        MessageBox.Show("Số điện thoại sai định dạng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        mtbSDT.Focus();
+                        return;
+                    }
+
+
+                    if (gioitinh == "")
+                    {
+                        MessageBox.Show("Vui lòng chọn giới tính của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    Regex rg = new Regex(@"^([\w\.])+@([\w\.])+\.([\w]){2,3}$");
+                    if (!rg.IsMatch(txtEmail.Text))
+                    {
+                        MessageBox.Show("Email sai định dạng!");
+                        txtEmail.Focus();
+                        return;
+                    }
+
+                    if (sodiem == "")
+                    {
+                        MessageBox.Show("Vui lòng điền số điểm của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    AddKhachHang(tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email);
+                    DisableTextBox();
+                    DisableComboBox();
+                    btnThem.Text = "Thêm";
+
+                    DisableHuyButton();
+                    EnableSuaButton();
+                    EnableXoaButton();
+                    LoadKhachHang();
+                    AddKhachHangBinding();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+            if (btnSua.Text.Equals("Sửa"))
+            {
+
+                EnableComboBox();
+                EnableTextBox();
+
+                DisableThemButton();
+                DisableXoaButton();
+
+                btnSua.Text = "Lưu";
+
+                EnableHuyButton();
+            }
+            else
+            {
+                string tenkh = txtTenKH.Text;
+                string sdt = mtbSDT.Text;
+                string gioitinh = cmbGioiTinh.Text;
+                string diachi = txtDiaChi.Text;
+                string sodiem = mtbSoDiem.Text;
+                string namsinh = dtNamSinh.Text;
+                string email = txtEmail.Text;
+                string makh = txtMaKH.Text;
+                if (tenkh == "")
+                {
+                    MessageBox.Show("Vui lòng điền 'tên khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (namsinh == "")
+                {
+                    MessageBox.Show("Vui lòng điền 'năm sinh khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (diachi == "")
+                {
+                    MessageBox.Show("Vui lòng điền 'địa chi của khách hàng'", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Regex dt = new Regex(@"((09|03|07|08|05)+([0-9]{8})\b)");
+                if (!dt.IsMatch(mtbSDT.Text))
+                {
+                    MessageBox.Show("Số điện thoại sai định dạng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                    return;
+                }
+
+
+                if (gioitinh == "")
+                {
+                    MessageBox.Show("Vui lòng chọn giới tính của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                Regex rg = new Regex(@"^([\w\.])+@([\w\.])+\.([\w]){2,3}$");
+                if (!rg.IsMatch(txtEmail.Text))
+                {
+                    MessageBox.Show("Email sai định dạng!", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                    return;
+                }
+                if (sodiem == "")
+                {
+                    MessageBox.Show("Vui lòng điền số điểm của khách hàng", "Quản lý khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                EditKhachHang(tenkh, sdt, gioitinh, diachi, sodiem, namsinh, email, makh);
+                DisableTextBox();
+                DisableComboBox();
+                btnSua.Text = "Sửa";
+                DisableHuyButton();
+                EnableThemButton();
+                EnableXoaButton();
+                LoadKhachHang();
+                AddKhachHangBinding();
+            }
+        }
+
+        private void btnHuy_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnThem.Text.Equals("Lưu"))
+                {
+                    btnThem.Text = "Thêm";
+                    EnableSuaButton();
+                    EnableXoaButton();
+                }
+
+                if (btnSua.Text.Equals("Lưu"))
+                {
+                    btnSua.Text = "Sửa";
+                    EnableXoaButton();
+                    EnableThemButton();
+                }
+                DisableHuyButton();
+                DisableTextBox();
+
+                LoadKhachHang();
+                AddKhachHangBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnXoa_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                string MaKH = txtMaKH.Text;
+                DeleteKhachHang(MaKH);
+                LoadKhachHang();
+                AddKhachHangBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnXem_Click_1(object sender, EventArgs e)
+        {
+            LoadKhachHang();
+            AddKhachHangBinding();
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string ten = txtSearch.Text;
+                dgvKhachHang.DataSource = SearchKhachHangBUS.Instance.GetKhachHang(ten);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

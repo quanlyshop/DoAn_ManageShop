@@ -123,4 +123,7 @@
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkdldExpc2hLaGFjaEhhbmciPjxGaWVsZCBOYW1lPSJNYUtIIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGVuS0giIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0RUIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikdpb2lUaW5oIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRpYUNoaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTb0RpZW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmFtU2luaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkVtYWlsIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
+  <metadata name="cachedRPHoaDon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 65</value>
+  </metadata>
 </root>

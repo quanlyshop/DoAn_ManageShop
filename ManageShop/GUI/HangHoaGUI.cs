@@ -204,7 +204,7 @@ namespace GUI
             }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             // lấy dữ liệu từ textBox
             string tenSP = txtTenSP.Text;
@@ -238,6 +238,253 @@ namespace GUI
                 return;
             }
             
+            else if (nhaSX == "")
+            {
+                MessageBox.Show("Vui lòng điền 'nhà sản xuất sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            else if (ngaySX == "")
+            {
+                MessageBox.Show("Vui lòng điền 'ngày sản xuất sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            else if (soLuong == "")
+            {
+                MessageBox.Show("Vui lòng điền 'số lượng sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            else
+            {
+                if (btnThem.Text.Equals("Thêm"))
+                {
+                    EnableTextBox();
+                    XoaTrang();
+                    btnThem.Text = "Lưu";
+                    EnableHuyButton();
+                    DisableSuaButton();
+                    DisableXoaButton();
+
+                }
+                else
+                {
+                    try
+                    {
+                        AddSanPham(tenSP, soLuong, donGiaGoc, donGiaBan, size, nhaSX, ngaySX);
+                        //load lại dữ liệu trên form
+                        LoadSanPham();
+
+                        //xóa trắng các ô textbox
+                        //XoaTrang();
+                        DisableTextBox();
+                        btnThem.Text = "Thêm";
+
+                        DisableHuyButton();
+                        EnableSuaButton();
+                        EnableXoaButton();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("'Mã sản phẩm đã tồn tại!'");
+                    }
+                }
+            }
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnSua.Text.Equals("Sửa"))
+                {
+                    LoadSanPham();
+                    EnableTextBox();
+
+                    DisableThemButton();
+                    DisableXoaButton();
+
+                    btnSua.Text = "Lưu";
+
+                    EnableHuyButton();
+                }
+                else
+                {
+                    string tenSP = txtTenSP.Text;
+                    string soLuong = mtbSoLuong.Text;
+                    string donGiaGoc = mtbDonGiaGoc.Text;
+                    string donGiaBan = mtbDonGiaBan.Text;
+                    string size = cmbSize.Text;
+                    string nhaSX = txtNhaSX.Text;
+                    string ngaySX = dtNgayNhap.Text;
+                    string maSP = txtMaSP.Text;
+                    if (tenSP == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'tên sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+
+                    else if (donGiaGoc == "")
+                    {
+                        MessageBox.Show("Vui lòng điền ' đơn giá gốc sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+                    else if (donGiaBan == "")
+                    {
+                        MessageBox.Show("Vui lòng điền ' đơn giá bán sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+
+                    else if (size == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'size sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+
+                    else if (nhaSX == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'nhà sản xuất sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+                    else if (ngaySX == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'ngày sản xuất sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+                    else if (soLuong == "")
+                    {
+                        MessageBox.Show("Vui lòng điền 'số lượng sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+                
+                    EditSanPham(tenSP, soLuong, donGiaGoc, donGiaBan, size, nhaSX, ngaySX, maSP);
+                    LoadSanPham();
+                    DisableTextBox();
+                    btnSua.Text = "Sửa";
+                    DisableHuyButton();
+                    EnableThemButton();
+                    EnableXoaButton();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            string MaSP = txtMaSP.Text;
+            DeleteSanPham(MaSP);
+            LoadSanPham();
+        }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnThem.Text.Equals("Lưu"))
+                {
+                    btnThem.Text = "Thêm";
+                    EnableSuaButton();
+                    EnableXoaButton();
+                }
+
+                if (btnSua.Text.Equals("Lưu"))
+                {
+                    btnSua.Text = "Sửa";
+                    EnableXoaButton();
+                    EnableThemButton();
+                }
+                
+                DisableHuyButton();
+                DisableTextBox();
+
+                LoadSanPham();
+                AddSanPhamBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchSP_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                EnableHuyButton();
+                string ten = txtSearchSP.Text;
+                dgvSanPham.DataSource = SearchSanPham.Instance.GetSanPham(ten);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void HangHoaGUI_Load(object sender, EventArgs e)
+        {
+            string cv = chucvu;
+
+            if (cv == "Nhân viên")
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                
+            }
+        }
+
+        private void xuấtDanhSáchSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachSanPham report = new DanhSachSanPham();
+            report.ShowPreviewDialog();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            // lấy dữ liệu từ textBox
+            string tenSP = txtTenSP.Text;
+            string soLuong = mtbSoLuong.Text;
+            string donGiaGoc = mtbDonGiaGoc.Text;
+            string donGiaBan = mtbDonGiaBan.Text;
+            string size = cmbSize.Text;
+            string nhaSX = txtNhaSX.Text;
+            string ngaySX = dtNgayNhap.Text;
+
+            if (tenSP == "")
+            {
+                MessageBox.Show("Vui lòng điền 'tên sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            else if (donGiaGoc == "")
+            {
+                MessageBox.Show("Vui lòng điền ' đơn giá gốc sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            else if (donGiaBan == "")
+            {
+                MessageBox.Show("Vui lòng điền ' đơn giá bán sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            else if (size == "")
+            {
+                MessageBox.Show("Vui lòng điền 'size sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
             else if (nhaSX == "")
             {
                 MessageBox.Show("Vui lòng điền 'nhà sản xuất sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -354,7 +601,7 @@ namespace GUI
                         MessageBox.Show("Vui lòng điền 'số lượng sản phẩm'", "Quản lý sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         return;
                     }
-                
+
                     EditSanPham(tenSP, soLuong, donGiaGoc, donGiaBan, size, nhaSX, ngaySX, maSP);
                     LoadSanPham();
                     DisableTextBox();
@@ -364,28 +611,18 @@ namespace GUI
                     EnableXoaButton();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult yes = MessageBox.Show("Bạn có chắc xóa thông tin?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (yes == DialogResult.Yes)
-                {
-                    string MaSP = txtMaSP.Text;
-                    DeleteSanPham(MaSP);
-                    LoadSanPham();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            string MaSP = txtMaSP.Text;
+            DeleteSanPham(MaSP);
+            LoadSanPham();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -405,7 +642,7 @@ namespace GUI
                     EnableXoaButton();
                     EnableThemButton();
                 }
-                
+
                 DisableHuyButton();
                 DisableTextBox();
 
@@ -416,17 +653,6 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSearchSP_Click(object sender, EventArgs e)
@@ -441,25 +667,6 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void HangHoaGUI_Load(object sender, EventArgs e)
-        {
-            string cv = chucvu;
-
-            if (cv == "Nhân viên")
-            {
-                btnThem.Enabled = false;
-                btnSua.Enabled = false;
-                btnXoa.Enabled = false;
-                
-            }
-        }
-
-        private void xuấtDanhSáchSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DanhSachSanPham report = new DanhSachSanPham();
-            report.ShowPreviewDialog();
         }
     }
 }
